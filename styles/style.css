@@ -1,12 +1,14 @@
 body {
   font-family: serif;
+  margin-top: inherit;
+  font-style: italic;
   background-color: #CFBAE1;
   /* change later */
 }
 
 h1 {
   text-align: center;
-  padding: 100px;
+  padding: 50px;
 }
 
 input[type=button] {
@@ -14,7 +16,12 @@ input[type=button] {
   padding: 14px 20px;
   font-size: 20px;
   border: none;
+<<<<<<< HEAD
+  border-radius: 5px;
+
+=======
   border-radius: 8px;
+>>>>>>> ade7521ac4a5e91e2b27a978b6f16b3463c95324
 }
 
 input[type=button]:hover {
