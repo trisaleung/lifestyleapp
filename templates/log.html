@@ -2,6 +2,7 @@
 <head>
   <title>Log</title>
   <link rel="stylesheet" href="../styles/style.css">
+  <script src = "../scripts/script.js"></script>
 </head>
 <body>
   <div id="nav_bar"></div>
@@ -9,11 +10,45 @@
   <br>
   <br>
   <div id = menu>
-    <form class="meals" method="post">
-      <input type="button" name="meal" value="Breakfast"></input>
-      <input type="button" name="meal" value="Lunch"></input>
-      <input type="button" name="meal" value="Dinner"></input>
-      <input type="button" name="meal" value="Snacks"></input>
-    </form>
+      <div class = "dropdown">
+      <button onclick="dropdownFunction()" class = "dropbutton">Breakfast</button>
+      <div class="dropdown-content" id = "dropdown1">
+        <ul>
+          <li>choice 1</li>
+          <li>choice 2</li>
+          <li>choice 3</li>
+        </ul>
+      </div>
+
+      <div class = "dropdown">
+      <button onclick="dropdownFunction2()" class = "dropbutton">Lunch</button>
+      <div class="dropdown-content" id = "dropdown2">
+        <ul>
+          <li>choice 1</li>
+          <li>choice 2</li>
+          <li>choice 3</li>
+        </ul>
+      </div>
+
+      <div class = "dropdown">
+      <button onclick="dropdownFunction3()" class = "dropbutton">Dinner</button>
+      <div class="dropdown-content" id = "dropdown3">
+        <ul>
+          <li>choice 1</li>
+          <li>choice 2</li>
+          <li>choice 3</li>
+        </ul>
+      </div>
+
+      <div id = "dropdownLast">
+      <button onclick="dropdownFunction4()" class = "dropbutton">Snacks</button>
+      <div class="dropdown-content" id = "dropdown4">
+        <ul>
+          <li>choice 1</li>
+          <li>choice 2</li>
+          <li>choice 3</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </body>

@@ -26,7 +26,8 @@ class MainHandler(webapp2.RequestHandler):
 
 class LogHandler(webapp2.RequestHandler):
     def get(self):
-        pass
+        log_template = the_jinja_env.get_template("/templates/log.html")
+        self.response.write(log_template.render())
 
     def post(self):
         pass

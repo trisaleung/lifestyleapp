@@ -37,6 +37,51 @@ input[name="meal"] {
   margin-top: 60px;
 }
 
+.dropbutton {
+  background-color: #719E9B;
+  padding: 14px 20px;
+  font-size: 20px;
+  border: none;
+  border-radius: 8px;
+  margin-left: 250px;
+  display: block;
+  margin-top: 60px;
+}
+
+.dropbutton:hover {
+  background-color: #81B5B1;
+  border-radius: 2px;
+  transition-duration: 0.4s;
+}
+
+.dropbutton:focus {
+  background-color: #A1E2DC;
+  border-radius: 2px;
+  transition-duration: 0.2s;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  /* position: absolute; */
+  background-color: #FFFFFF;
+  margin-left: 250px;
+  padding: 20px;
+}
+
+.show {
+  display: block;
+}
+
+#dropdownLast {
+  margin-bottom: 70px;
+}
+
 #nav_bar {
   height: 80px;
   width: 200%;
