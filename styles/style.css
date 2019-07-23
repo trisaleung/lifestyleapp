@@ -4,21 +4,36 @@ body {
   /* change later */
 }
 
+h1 {
+  text-align: center;
+  padding: 100px;
+}
+
 input[type=button] {
   background-color: #719E9B;
   padding: 14px 20px;
   font-size: 20px;
   border: none;
   border-radius: 8px;
+  margin-left: 250px;
 }
+
 input[type=button]:hover {
   background-color: #81B5B1;
   border-radius: 2px;
   transition-duration: 0.4s;
 }
+
 input[type=button]:focus {
   background-color: #A1E2DC;
   border-radius: 2px;
   transition-duration: 0.2s;
   border: none;
+}
+
+#menu {
+  background-color: #FFCAD4;
+  margin-right: 100px;
+  margin-left: 100px;
+  padding: 30px;
 }

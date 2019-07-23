@@ -19,6 +19,14 @@ class MainHandler(webapp2.RequestHandler):
     def post(self):
         pass
 
+class LogHandler(webapp2.RequestHandler):
+    def get(self):
+        pass
+
+    def post(self):
+        pass
+
 app = webapp2.WSGIApplication([
     ("/", MainHandler),
+    ("/log", LogHandler),
 ])
