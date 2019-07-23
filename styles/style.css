@@ -1,4 +1,24 @@
 body {
   font-family: serif;
+  background-color: #CFBAE1;
   /* change later */
+}
+
+input[type=button] {
+  background-color: #719E9B;
+  padding: 14px 20px;
+  font-size: 20px;
+  border: none;
+  border-radius: 8px;
+}
+input[type=button]:hover {
+  background-color: #81B5B1;
+  border-radius: 2px;
+  transition-duration: 0.4s;
+}
+input[type=button]:focus {
+  background-color: #A1E2DC;
+  border-radius: 2px;
+  transition-duration: 0.2s;
+  border: none;
 }
