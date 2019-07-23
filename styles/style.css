@@ -1,12 +1,14 @@
 body {
   font-family: serif;
+  margin-top: inherit;
+  font-style: italic;
   background-color: #CFBAE1;
   /* change later */
 }
 
 h1 {
   text-align: center;
-  padding: 100px;
+  padding: 50px;
 }
 
 input[type=button] {
@@ -14,8 +16,12 @@ input[type=button] {
   padding: 14px 20px;
   font-size: 20px;
   border: none;
+<<<<<<< HEAD
+  border-radius: 5px;
+
+=======
   border-radius: 8px;
-  margin-left: 250px;
+>>>>>>> ade7521ac4a5e91e2b27a978b6f16b3463c95324
 }
 
 input[type=button]:hover {
@@ -31,9 +37,75 @@ input[type=button]:focus {
   border: none;
 }
 
+input[name="meal"] {
+  margin-left: 250px;
+  display: block;
+  margin-bottom: 70px;
+  margin-top: 60px;
+}
+
+.dropbutton {
+  background-color: #719E9B;
+  padding: 14px 20px;
+  font-size: 20px;
+  border: none;
+  border-radius: 8px;
+  margin-left: 250px;
+  display: block;
+  margin-top: 60px;
+}
+
+.dropbutton:hover {
+  background-color: #81B5B1;
+  border-radius: 2px;
+  transition-duration: 0.4s;
+}
+
+.dropbutton:focus {
+  background-color: #A1E2DC;
+  border-radius: 2px;
+  transition-duration: 0.2s;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  /* position: absolute; */
+  background-color: #FFFFFF;
+  margin-left: 250px;
+  padding: 20px;
+}
+
+.show {
+  display: block;
+}
+
+#dropdownLast {
+  margin-bottom: 70px;
+}
+
+#nav_bar {
+  height: 80px;
+  width: 102%;
+  background-color: #71667B;
+  margin-top: -30px;
+  margin-left: -10px;
+
+}
+
 #menu {
-  background-color: #FFCAD4;
+  border-color: #FFCAD4;
+  border-style: solid;
+  border-width: 10px;
+  background-color: #EEEEEE;
   margin-right: 100px;
   margin-left: 100px;
   padding: 30px;
+  margin-bottom: 100px;
+  border-radius: 8px;
 }

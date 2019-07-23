@@ -26,6 +26,14 @@ class MainHandler(webapp2.RequestHandler):
 
 class LogHandler(webapp2.RequestHandler):
     def get(self):
+        log_template = the_jinja_env.get_template("/templates/log.html")
+        self.response.write(log_template.render())
+
+    def post(self):
+        pass
+
+class LoggedInHandler(webapp2.RequestHandler):
+    def get(self):
         pass
 
     def post(self):
@@ -34,6 +42,7 @@ class LogHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ("/", MainHandler),
     ("/log", LogHandler),
+    ("/loggedin", LoggedInHandler),
 ])
 
 class MainHandler(webapp2.RequestHandler):
@@ -61,9 +70,3 @@ class LoggedInHandler(webapp2.RequestHandler):
 
         logout_url = users.create_logout_url("/")
         self.response.write("Hello " + nickname + '. <a href="' + logout_url + '">Logout here</a>')
-
-app = webapp2.WSGIApplication([
-    ("/", MainHandler),
-    ("/nouser", NoUserHandler),
-    ("/loggedin", LoggedInHandler)
-], debug=True)
