@@ -1,5 +1,5 @@
 import webapp2
-from google.appengine.api import urlfetch
+from google.appengine.api import urlfetch, users
 import json
 import jinja2
 import os
@@ -11,6 +11,11 @@ the_jinja_env = jinja2.Environment(
     undefined = jinja2.StrictUndefined,
     autoescape = True
 )
+
+jinja_current_directory = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+    extensions=['jinja2.ext.autoescape'],
+    autoescape=True)
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
@@ -52,7 +57,8 @@ class MainHandler(webapp2.RequestHandler):
 class NoUserHandler(webapp2.RequestHandler):
     def get(self):
         login_url = users.create_login_url("/")
-        self.response.write('Login here: <a href="' + login_url + '">click here</a>')
+        start_template=jinja_current_directory.get_template("templates/login.html")
+        self.response.write(start_template.render())
 
 class LoggedInHandler(webapp2.RequestHandler):
     def get(self):
