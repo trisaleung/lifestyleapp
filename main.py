@@ -45,18 +45,18 @@ class LoggedInHandler(webapp2.RequestHandler):
 class LogHandler(webapp2.RequestHandler):
     def get(self):
         log_template = the_jinja_env.get_template("/templates/log.html")
-        self.response.write(log_template.render())
+
+        amountofwater = 8
+
+        template_vars = {
+            "amountofwater" : amountofwater,
+        }
+
+
+        self.response.write(log_template.render(template_vars))
 
     def post(self):
         pass
-        # log_response = the_jinja_env.get_template("/templates/log.html")
-        # scrollid = self.request.get("scrollbutton")
-        #
-        # template_vars = {}
-        #
-        # if scrollid == "breakfast"{
-        #     template_vars.update(id = "breakfast")
-        # }
 
 class ProfileHandler(webapp2.RequestHandler):
     def get(self):
@@ -64,22 +64,21 @@ class ProfileHandler(webapp2.RequestHandler):
 
         user = users.get_current_user()
         nickname = user.nickname()
+        print nickname
+
         logout_url = users.create_logout_url("/")
 
         #hopefully once you log in, you'll be redirected to the templates page
         #and it will fill in your nickname and have a logout url
 
         template_vars = {
-            nickname : "nickname",
-            # logout_url : "logout_url",
+            "nickname" : nickname,
+            "logout_url" : logout_url,
         }
 
         self.response.write(profile_template.render(template_vars))
 
         #not sure how you guys are doing the editing thing and if it needs a post or not
-
-    def post(self):
-        pass
 
 app = webapp2.WSGIApplication([
     ("/", MainHandler),
