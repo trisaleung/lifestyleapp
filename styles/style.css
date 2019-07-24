@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+body  {
+  font-family: serif;
+  margin-top: inherit;
+  font-style: italic;
+=======
 html {
   scroll-behavior: smooth;
 }
@@ -7,14 +13,21 @@ body {
   margin-top: inherit;
   font-style: italic;
   background-color: #F2EDE4;
+>>>>>>> 00d86d0abcde7bf450a7e8285a548b065ddf4bc9
   /* change later */
 }
-
+#Sam{
+  background-image: url(https://cdn.wallpapersafari.com/24/72/mk1LZw.jpg)
+}
 h1 {
   text-align: center;
   padding: 50px;
+<<<<<<< HEAD
+  color: white;
+=======
   font-size: 44px;
   font-style: normal;
+>>>>>>> 00d86d0abcde7bf450a7e8285a548b065ddf4bc9
 }
 
 input[type=button] {
@@ -190,4 +203,7 @@ arrow,
   padding: 30px;
   margin-bottom: 100px;
   border-radius: 2px;
+}
+p{
+  font-size: 60px
 }

@@ -40,27 +40,21 @@ class LoggedInHandler(webapp2.RequestHandler):
     def post(self):
         pass
 
-app = webapp2.WSGIApplication([
-    ("/", MainHandler),
-    ("/log", LogHandler),
-    ("/loggedin", LoggedInHandler),
-])
-
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
-        if  user:
-        #     self.response.write("Now is the winter of our discontent")
-
+        if user:
+            self.response.write("Now is the winter of our discontent")
             self.redirect("/loggedin")
         else:
+            self.response.write("Now is the winter of our discontent")
             login_url = users.create_login_url("/")
             self.redirect(login_url)
 
 class NoUserHandler(webapp2.RequestHandler):
     def get(self):
         login_url = users.create_login_url("/")
-        start_template=jinja_current_directory.get_template("templates/login.html")
+        start_template=the_jinja_env.get_template("templates/login.html")
         self.response.write('<a href="' + login_url + '">click here</a>')
 
 
@@ -71,3 +65,10 @@ class LoggedInHandler(webapp2.RequestHandler):
 
         logout_url = users.create_logout_url("/")
         self.response.write("Hello " + nickname + '. <a href="' + logout_url + '">Logout here</a>')
+
+
+app = webapp2.WSGIApplication([
+    ("/", MainHandler),
+    ("/log", LogHandler),
+    ("/loggedin", LoggedInHandler),
+])
