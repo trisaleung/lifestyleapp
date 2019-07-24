@@ -48,7 +48,7 @@ class LogHandler(webapp2.RequestHandler):
         self.response.write(log_template.render())
 
     def post(self):
-        pass
+        print ("hello")
         # log_response = the_jinja_env.get_template("/templates/log.html")
         # scrollid = self.request.get("scrollbutton")
         #
@@ -71,7 +71,7 @@ class ProfileHandler(webapp2.RequestHandler):
 
         template_vars = {
             nickname : "nickname",
-            # logout_url : "logout_url",
+            logout_url : "logout_url",
         }
 
         self.response.write(profile_template.render(template_vars))
