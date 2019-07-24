@@ -53,11 +53,11 @@
       <div id = "dropdownLast">
       <button onclick="dropdownFunction5()" class = "dropbutton">Water</button>
       <div class="dropdown-content" id = "dropdown5">
-        <ul>
-          <li>choice 1</li>
-          <li>choice 2</li>
-          <li>choice 3</li>
-        </ul>
+        <form class="waterAmount" method="post">
+          <input type="text" name="amountofwater" placeholder="x cups of water">
+          <input type="submit" name="submitbutton" value="enter">
+          <p>You've had {{amountofwater}} cups of water today!</p>
+        </form>
       </div>
     </div>
   </div>
