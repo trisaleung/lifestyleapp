@@ -18,6 +18,14 @@ h1 {
   font-style: normal;
 }
 
+.scrollmenu {
+  border-top: 2px solid #A2A63C;
+  border-left: 2px solid #A2A63C;
+  border-right: 2px solid #A2A63C;
+  border-bottom: none;
+  background-color: #374034;
+}
+
 input[type=button] {
   background-color: #719E9B;
   padding: 14px 20px;
@@ -53,7 +61,7 @@ input[name="meal"] {
   font-size: 20px;
   border: none;
   border-radius: 8px;
-  margin-left: 250px;
+  margin-left: 100px;
   display: block;
   margin-top: 60px;
 }
@@ -79,16 +87,16 @@ input[name="meal"] {
 }
 
 .dropdown-content {
-  display: none;
+  display: block;
   /* position: absolute; */
   background-color: #FFFFFF;
   margin-left: 250px;
   padding: 20px;
 }
 
-.show {
+/* .show {
   display: block;
-}
+} */
 
 .scrollmenu {
   font-size: 24px;
@@ -192,6 +200,7 @@ arrow,
   margin-bottom: 100px;
   border-radius: 2px;
 }
+
 /* p{
   font-size: 60px
 } */
