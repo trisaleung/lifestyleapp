@@ -46,7 +46,8 @@ input[name="meal"] {
 }
 
 .dropbutton {
-  background-color: #719E9B;
+  background-color: #838C61;
+  color: #FFFFFF;
   padding: 14px 20px;
   font-size: 20px;
   border: none;
@@ -57,13 +58,13 @@ input[name="meal"] {
 }
 
 .dropbutton:hover {
-  background-color: #81B5B1;
+  background-color: #96A47C;
   border-radius: 2px;
   transition-duration: 0.4s;
 }
 
 .dropbutton:focus {
-  background-color: #A1E2DC;
+  background-color: #BAC4A9;
   border-radius: 2px;
   transition-duration: 0.2s;
   border: none;
@@ -111,6 +112,7 @@ input[name="meal"] {
   padding-top: 102px;
 }
 
+/*giant box in the nav page log page*/
 #nav_bar_borders {
   height: 220px;
   width: 62%;
@@ -122,6 +124,7 @@ input[name="meal"] {
   border-color: #374034;
 }
 
+/*scrolling arrows for the log page*/
 arrow,
 .arrow:before {
   position: absolute;
