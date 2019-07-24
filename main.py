@@ -12,11 +12,11 @@ the_jinja_env = jinja2.Environment(
     autoescape = True
 )
 
-jinja_current_directory = jinja2.Environment(
-    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
-    extensions=['jinja2.ext.autoescape'],
-    autoescape=True
-)
+# jinja_current_directory = jinja2.Environment(
+#     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+#     extensions=['jinja2.ext.autoescape'],
+#     autoescape=True
+# )
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
@@ -32,6 +32,14 @@ class LogHandler(webapp2.RequestHandler):
 
     def post(self):
         pass
+        # log_response = the_jinja_env.get_template("/templates/log.html")
+        # scrollid = self.request.get("scrollbutton")
+        #
+        # template_vars = {}
+        #
+        # if scrollid == "breakfast"{
+        #     template_vars.update(id = "breakfast")
+        # }
 
 class LoggedInHandler(webapp2.RequestHandler):
     def get(self):
