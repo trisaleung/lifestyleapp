@@ -122,6 +122,20 @@ input[name="meal"] {
   padding: 40px;
 }
 
+#nav_bar_log {
+  background-color: #374034;
+  height: 5px;
+  margin-top: 40px;
+  margin-left: -8px;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  text-align: right;
+  font-family: 'Assistant';
+  color: #F2EDE4;
+  padding: 40px;
+}
+
 #text_in_nav {
   margin-right: 80px;
   margin-top: -1px;
@@ -228,7 +242,7 @@ arrow,
 }
 
 .link {
-  
+
 }
 
 /* p{
