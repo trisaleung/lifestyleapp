@@ -54,37 +54,37 @@
       </div>
     </div>
 
-        <div class = "dropdown">
-        <button class = "dropbutton">dinner</button>
+    <div class = "dropdown" id = "dinner">
+      <button class = "dropbutton">dinner</button>
+      <div class="dropdown-content">
+        <ul>
+          <li>choice 1</li>
+          <li>choice 2</li>
+          <li>choice 3</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class = "dropdown" id = "snacks">
+      <button class = "dropbutton">snacks</button>
         <div class="dropdown-content">
           <ul>
             <li>choice 1</li>
             <li>choice 2</li>
             <li>choice 3</li>
           </ul>
-        </div>
       </div>
+    </div>
 
-        <div class = "dropdown">
-        <button class = "dropbutton">snacks</button>
-        <div class="dropdown-content">
-          <ul>
-            <li>choice 1</li>
-            <li>choice 2</li>
-            <li>choice 3</li>
-          </ul>
-        </div>
-      </div>
-
-        <div id = "dropdownLast">
-        <button class = "dropbutton">water</button>
-        <div class="dropdown-content">
-          <form class="waterAmount" method="post">
-            <input type="text" name="amountofwater" placeholder="x cups of water">
-            <input type="submit" name="submitbutton" value="enter">
-            <p>You've had {{amountofwater}} cups of water today!</p>
-          </form>
-        </div>
-      </div>
+    <div class = "dropdownLast" id = "water">
+    <button class = "dropbutton">water</button>
+    <div class="dropdown-content">
+      <form class="waterAmount" method="post">
+        <input type="text" name="amountofwater" placeholder="x cups of water">
+        <input type="submit" name="submitbutton" value="enter">
+        <p>You've had {{amountofwater}} cups of water today!</p>
+      </form>
+    </div>
+  </div>
   </div>
 </body>
