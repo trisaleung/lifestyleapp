@@ -2,16 +2,33 @@
 <head>
   <title>Log</title>
   <link rel="stylesheet" href="../styles/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Assistant&display=swap" rel="stylesheet">
   <script src = "../scripts/script.js"></script>
 </head>
 <body>
-  <div id="nav_bar"></div>
-  <h1>My log</h1>
+  <div id="nav_bar">
+    <p id="text_in_nav">log out!</p>
+  </div>
+  <div id="nav_bar_borders">
+    <div id="inside">
+      <h1>my log</h1>
+    </div>
+    <div id="nav_menu">
+      <form class="options" method="post">
+        <button type="button" name="breakfast" value = "breakfast">breakfast</button>
+        <button type="button" name="lunch" value = "lunch">lunch</button>
+        <button type="button" name="dinner" value = "dinner">dinner</button>
+        <button type="button" name="snack" value = "snacks">snacks</button>
+        <button type="button" name="water" value = "water">water</button>
+      </form>
+    </div>
+    <a href="#menu"><div class="arrow"></div></a>
+  </div>
   <br>
   <br>
   <div id = menu>
       <div class = "dropdown">
-      <button onclick="dropdownFunction()" class = "dropbutton">Breakfast</button>
+      <button onclick="dropdownFunction()" class = "dropbutton">breakfast</button>
       <div class="dropdown-content" id = "dropdown1">
         <ul>
           <li>choice 1</li>
@@ -21,7 +38,7 @@
       </div>
 
       <div class = "dropdown">
-      <button onclick="dropdownFunction2()" class = "dropbutton">Lunch</button>
+      <button onclick="dropdownFunction2()" class = "dropbutton">lunch</button>
       <div class="dropdown-content" id = "dropdown2">
         <ul>
           <li>choice 1</li>
@@ -31,7 +48,7 @@
       </div>
 
       <div class = "dropdown">
-      <button onclick="dropdownFunction3()" class = "dropbutton">Dinner</button>
+      <button onclick="dropdownFunction3()" class = "dropbutton">dinner</button>
       <div class="dropdown-content" id = "dropdown3">
         <ul>
           <li>choice 1</li>
@@ -41,7 +58,7 @@
       </div>
 
       <div class = "dropdown">
-      <button onclick="dropdownFunction4()" class = "dropbutton">Snacks</button>
+      <button onclick="dropdownFunction4()" class = "dropbutton">snacks</button>
       <div class="dropdown-content" id = "dropdown4">
         <ul>
           <li>choice 1</li>
@@ -51,13 +68,13 @@
       </div>
 
       <div id = "dropdownLast">
-      <button onclick="dropdownFunction5()" class = "dropbutton">Water</button>
+      <button onclick="dropdownFunction5()" class = "dropbutton">water</button>
       <div class="dropdown-content" id = "dropdown5">
-        <ul>
-          <li>choice 1</li>
-          <li>choice 2</li>
-          <li>choice 3</li>
-        </ul>
+        <form class="waterAmount" method="post">
+          <input type="text" name="amountofwater" placeholder="x cups of water">
+          <input type="submit" name="submitbutton" value="enter">
+          <p>You've had {{amountofwater}} cups of water today!</p>
+        </form>
       </div>
     </div>
   </div>

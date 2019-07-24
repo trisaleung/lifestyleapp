@@ -12,12 +12,18 @@ the_jinja_env = jinja2.Environment(
     autoescape = True
 )
 
-# class MainHandler(webapp2.RequestHandler):
-#     def get(self):
-#         pass
-#
-#     def post(self):
-#         pass
+jinja_current_directory = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+    extensions=['jinja2.ext.autoescape'],
+    autoescape=True
+)
+
+class MainHandler(webapp2.RequestHandler):
+    def get(self):
+        pass
+
+    def post(self):
+        pass
 
 class LogHandler(webapp2.RequestHandler):
     def get(self):
