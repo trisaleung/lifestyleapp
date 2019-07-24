@@ -70,8 +70,8 @@ class ProfileHandler(webapp2.RequestHandler):
         #and it will fill in your nickname and have a logout url
 
         template_vars = {
-            nickname = "nickname",
-            logout_url = "logout_url",
+            nickname : "nickname",
+            # logout_url : "logout_url",
         }
 
         self.response.write(profile_template.render(template_vars))
