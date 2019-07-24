@@ -4,6 +4,8 @@ import json
 import jinja2
 import os
 import random
+from fatsecret import Fatsecret
+
 
 the_jinja_env = jinja2.Environment(
     loader = jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -27,6 +29,9 @@ class MainHandler(webapp2.RequestHandler):
 
 class LogHandler(webapp2.RequestHandler):
     def get(self):
+        life_key ="2de49a3300b94286944e4cbae4986364"
+        fs = Fatsecret(consumer_key, consumer_secret)
+        print(Fatsecret)
         log_template = the_jinja_env.get_template("/templates/log.html")
         self.response.write(log_template.render())
 

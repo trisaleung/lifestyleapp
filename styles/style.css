@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-body  {
-  font-family: serif;
-  margin-top: inherit;
-  font-style: italic;
-=======
 html {
   scroll-behavior: smooth;
 }
@@ -13,7 +7,6 @@ body {
   margin-top: inherit;
   font-style: italic;
   background-color: #F2EDE4;
->>>>>>> 00d86d0abcde7bf450a7e8285a548b065ddf4bc9
   /* change later */
 }
 #Sam{
