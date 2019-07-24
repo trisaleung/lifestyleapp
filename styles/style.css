@@ -1,14 +1,16 @@
-body {
+body  {
   font-family: serif;
   margin-top: inherit;
   font-style: italic;
-  background-color: #CFBAE1;
   /* change later */
 }
-
+#Sam{
+  background-image: url(https://cdn.wallpapersafari.com/24/72/mk1LZw.jpg)
+}
 h1 {
   text-align: center;
   padding: 50px;
+  color: white;
 }
 
 input[type=button] {
@@ -108,4 +110,7 @@ input[name="meal"] {
   padding: 30px;
   margin-bottom: 100px;
   border-radius: 8px;
+}
+p{
+  font-size: 60px
 }
