@@ -18,13 +18,6 @@ the_jinja_env = jinja2.Environment(
 #     autoescape=True
 # )
 
-class MainHandler(webapp2.RequestHandler):
-    def get(self):
-        pass
-
-    def post(self):
-        pass
-
 class LogHandler(webapp2.RequestHandler):
     def get(self):
         log_template = the_jinja_env.get_template("/templates/log.html")
