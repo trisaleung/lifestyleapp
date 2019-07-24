@@ -46,9 +46,19 @@ class LoggedInHandler(webapp2.RequestHandler):
 
 class LogHandler(webapp2.RequestHandler):
     def get(self):
+<<<<<<< HEAD
+        # life_key ="2de49a3300b94286944e4cbae4986364"
+        # fs = Fatsecret(consumer_key, consumer_secret)
+        # print(Fatsecret)
+        log_template = the_jinja_env.get_template("/templates/log.html")
+
+        amountofwater = 8
+
+=======
         life_key ="2de49a3300b94286944e4cbae4986364"
         # fs = Fatsecret(consumer_key, consumer_secret)
         # print(Fatsecret)
+>>>>>>> cbc3381c01f0025fd3f35bc20361f5030cba66ec
         template_vars = {
         "amountofwater" : ""
         }
