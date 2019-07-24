@@ -7,10 +7,12 @@ body {
   margin-top: inherit;
   font-style: italic;
   background-color: #F2EDE4;
+<<<<<<< HEAD
+  /* change later */
+=======
+>>>>>>> f966d00d07d2eca6570cf0941c20107d5ba38d6c
 }
-#Sam{
-  background-image: url(https://cdn.wallpapersafari.com/24/72/mk1LZw.jpg)
-}
+
 h1 {
   text-align: center;
   padding: 50px;
