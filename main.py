@@ -4,7 +4,7 @@ import json
 import jinja2
 import os
 import random
-from fatsecret import Fatsecret
+# from fatsecret import Fatsecret
 
 
 the_jinja_env = jinja2.Environment(
