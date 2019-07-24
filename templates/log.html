@@ -15,67 +15,78 @@
     </div>
     <div id="nav_menu">
       <form class="options" method="post">
-        <button type="button" name="breakfast" value = "breakfast">breakfast</button>
-        <button type="button" name="lunch" value = "lunch">lunch</button>
-        <button type="button" name="dinner" value = "dinner">dinner</button>
-        <button type="button" name="snack" value = "snacks">snacks</button>
-        <button type="button" name="water" value = "water">water</button>
+        <a href="#breakfast"><button type="button" name="scrollbutton" value = "breakfast" class = "scrollmenu">breakfast</button></a>
+        <a href="#lunch"><button type="button" name="scrollbutton" value = "lunch" class = "scrollmenu">lunch</button></a>
+        <a href="#dinner"><button type="button" name="scrollbutton" value = "dinner" class = "scrollmenu">dinner</button></a>
+        <a href="#snacks"><button type="button" name="scrollbutton" value = "snacks" class = "scrollmenu">snacks</button></a>
+        <a href="water"><button type="button" name="scrollbutton" value  = "water" class  = "scrollmenu">water</button></a>
+        <!-- <button type="button" name="scrollbutton" value = "dinner" class = "scrollmenu">dinner</button>
+        <button type="button" name="scrollbutton" value = "snacks" class = "scrollmenu">snacks</button>
+        <button type="button" name="scrollbutton" value = "water" class = "scrollmenu">water</button> -->
       </form>
     </div>
     <a href="#menu"><div class="arrow"></div></a>
   </div>
   <br>
   <br>
-  <div id = menu>
-      <div class = "dropdown">
-      <button onclick="dropdownFunction()" class = "dropbutton">breakfast</button>
-      <div class="dropdown-content" id = "dropdown1">
-        <ul>
-          <li>choice 1</li>
-          <li>choice 2</li>
-          <li>choice 3</li>
-        </ul>
-      </div>
-
-      <div class = "dropdown">
-      <button onclick="dropdownFunction2()" class = "dropbutton">lunch</button>
-      <div class="dropdown-content" id = "dropdown2">
-        <ul>
-          <li>choice 1</li>
-          <li>choice 2</li>
-          <li>choice 3</li>
-        </ul>
-      </div>
-
-      <div class = "dropdown">
-      <button onclick="dropdownFunction3()" class = "dropbutton">dinner</button>
-      <div class="dropdown-content" id = "dropdown3">
-        <ul>
-          <li>choice 1</li>
-          <li>choice 2</li>
-          <li>choice 3</li>
-        </ul>
-      </div>
-
-      <div class = "dropdown">
-      <button onclick="dropdownFunction4()" class = "dropbutton">snacks</button>
-      <div class="dropdown-content" id = "dropdown4">
-        <ul>
-          <li>choice 1</li>
-          <li>choice 2</li>
-          <li>choice 3</li>
-        </ul>
-      </div>
-
-      <div id = "dropdownLast">
-      <button onclick="dropdownFunction5()" class = "dropbutton">water</button>
-      <div class="dropdown-content" id = "dropdown5">
-        <form class="waterAmount" method="post">
-          <input type="text" name="amountofwater" placeholder="x cups of water">
-          <input type="submit" name="submitbutton" value="enter">
-          <p>You've had {{amountofwater}} cups of water today!</p>
-        </form>
+  <div id = "menu">
+    <div class = "menu" id = "breakfast">
+        <div class = "dropdown">
+        <button class = "dropbutton">breakfast</button>
+        <div class="dropdown-content">
+          <ul>
+            <li>choice 1</li>
+            <li>choice 2</li>
+            <li>choice 3</li>
+          </ul>
+        </div>
       </div>
     </div>
+
+    <div class = "menu" id = "lunch">
+        <div class = "dropdown">
+        <button class = "dropbutton">lunch</button>
+        <div class="dropdown-content">
+          <ul>
+            <li>choice 1</li>
+            <li>choice 2</li>
+            <li>choice 3</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+        <div class = "dropdown">
+        <button class = "dropbutton">dinner</button>
+        <div class="dropdown-content">
+          <ul>
+            <li>choice 1</li>
+            <li>choice 2</li>
+            <li>choice 3</li>
+          </ul>
+        </div>
+      </div>
+
+        <div class = "dropdown">
+        <button class = "dropbutton">snacks</button>
+        <div class="dropdown-content">
+          <ul>
+            <li>choice 1</li>
+            <li>choice 2</li>
+            <li>choice 3</li>
+          </ul>
+        </div>
+      </div>
+
+        <div id = "dropdownLast">
+        <button class = "dropbutton">water</button>
+        <div class="dropdown-content">
+          <form class="waterAmount" method="post">
+            <input type="text" name="amountofwater" placeholder="x cups of water">
+            <input type="submit" name="submitbutton" value="enter">
+            <p>You've had {{amountofwater}} cups of water today!</p>
+          </form>
+        </div>
+      </div>
   </div>
 </body>

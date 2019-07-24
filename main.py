@@ -14,18 +14,35 @@ the_jinja_env = jinja2.Environment(
     autoescape = True
 )
 
-jinja_current_directory = jinja2.Environment(
-    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
-    extensions=['jinja2.ext.autoescape'],
-    autoescape=True
-)
+# jinja_current_directory = jinja2.Environment(
+#     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+#     extensions=['jinja2.ext.autoescape'],
+#     autoescape=True
+# )
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        pass
+        user = users.get_current_user()
+        if user:
+            self.redirect("/profile")
+        else:
+            login_url = users.create_login_url("/")
+            self.redirect(login_url)
 
-    def post(self):
-        pass
+# class NoUserHandler(webapp2.RequestHandler):
+#     def get(self):
+#         login_url = users.create_login_url("/")
+#         start_template=the_jinja_env.get_template("templates/login.html")
+#         self.response.write('<a href="' + login_url + '">click here</a>')
+
+
+class LoggedInHandler(webapp2.RequestHandler):
+    def get(self):
+        user = users.get_current_user()
+        nickname = user.nickname()
+
+        logout_url = users.create_logout_url("/")
+        self.response.write("Hello " + nickname + '. <a href="' + logout_url + '">Logout here</a>')
 
 class LogHandler(webapp2.RequestHandler):
     def get(self):
@@ -37,43 +54,40 @@ class LogHandler(webapp2.RequestHandler):
 
     def post(self):
         pass
+        # log_response = the_jinja_env.get_template("/templates/log.html")
+        # scrollid = self.request.get("scrollbutton")
+        #
+        # template_vars = {}
+        #
+        # if scrollid == "breakfast"{
+        #     template_vars.update(id = "breakfast")
+        # }
 
-class LoggedInHandler(webapp2.RequestHandler):
+class ProfileHandler(webapp2.RequestHandler):
     def get(self):
-        pass
+        profile_template = the_jinja_env.get_template("/templates/profile.html")
+
+        user = users.get_current_user()
+        nickname = user.nickname()
+        logout_url = users.create_logout_url("/")
+
+        #hopefully once you log in, you'll be redirected to the templates page
+        #and it will fill in your nickname and have a logout url
+
+        template_vars = {
+            nickname : "nickname",
+            # logout_url : "logout_url",
+        }
+
+        self.response.write(profile_template.render(template_vars))
+
+        #not sure how you guys are doing the editing thing and if it needs a post or not
 
     def post(self):
         pass
 
-class MainHandler(webapp2.RequestHandler):
-    def get(self):
-        user = users.get_current_user()
-        if user:
-            self.response.write("Now is the winter of our discontent")
-            self.redirect("/loggedin")
-        else:
-            self.response.write("Now is the winter of our discontent")
-            login_url = users.create_login_url("/")
-            self.redirect(login_url)
-
-class NoUserHandler(webapp2.RequestHandler):
-    def get(self):
-        login_url = users.create_login_url("/")
-        start_template=the_jinja_env.get_template("templates/login.html")
-        self.response.write('<a href="' + login_url + '">click here</a>')
-
-
-class LoggedInHandler(webapp2.RequestHandler):
-    def get(self):
-        user = users.get_current_user()
-        nickname = user.nickname()
-
-        logout_url = users.create_logout_url("/")
-        self.response.write("Hello " + nickname + '. <a href="' + logout_url + '">Logout here</a>')
-
-
 app = webapp2.WSGIApplication([
     ("/", MainHandler),
     ("/log", LogHandler),
-    ("/loggedin", LoggedInHandler),
+    ("/profile", ProfileHandler),
 ])

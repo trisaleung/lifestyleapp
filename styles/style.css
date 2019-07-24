@@ -7,7 +7,10 @@ body {
   margin-top: inherit;
   font-style: italic;
   background-color: #F2EDE4;
+<<<<<<< HEAD
   /* change later */
+=======
+>>>>>>> f966d00d07d2eca6570cf0941c20107d5ba38d6c
 }
 #Sam{
   background-image: url(https://cdn.wallpapersafari.com/24/72/mk1LZw.jpg)
@@ -15,12 +18,16 @@ body {
 h1 {
   text-align: center;
   padding: 50px;
-<<<<<<< HEAD
-  color: white;
-=======
   font-size: 44px;
   font-style: normal;
->>>>>>> 00d86d0abcde7bf450a7e8285a548b065ddf4bc9
+}
+
+.scrollmenu {
+  border-top: 2px solid #A2A63C;
+  border-left: 2px solid #A2A63C;
+  border-right: 2px solid #A2A63C;
+  border-bottom: none;
+  background-color: #374034;
 }
 
 input[type=button] {
@@ -53,18 +60,19 @@ input[name="meal"] {
 
 .dropbutton {
   background-color: #838C61;
-  color: #FFFFFF;
+  color: #FAF8F5;
   padding: 14px 20px;
   font-size: 20px;
   border: none;
   border-radius: 8px;
-  margin-left: 250px;
+  margin-left: 100px;
   display: block;
   margin-top: 60px;
 }
 
 .dropbutton:hover {
   background-color: #96A47C;
+  color: #F2ECE4;
   border-radius: 2px;
   transition-duration: 0.4s;
 }
@@ -72,6 +80,7 @@ input[name="meal"] {
 .dropbutton:focus {
   background-color: #BAC4A9;
   border-radius: 2px;
+  color: #6E5735;
   transition-duration: 0.2s;
   border: none;
 }
@@ -82,15 +91,22 @@ input[name="meal"] {
 }
 
 .dropdown-content {
-  display: none;
+  display: block;
   /* position: absolute; */
   background-color: #FFFFFF;
   margin-left: 250px;
   padding: 20px;
 }
 
-.show {
+/* .show {
   display: block;
+} */
+
+.scrollmenu {
+  font-size: 24px;
+  padding: 24px;
+  width: 210.2px;
+  margin-right: -8px;
 }
 
 #dropdownLast {
@@ -177,7 +193,7 @@ arrow,
     transform: translate(-10px, -10px);
 } */
 
-#menu {
+.menu {
   border-color: #374034;
   border-style: solid;
   border-width: 10px;
@@ -188,6 +204,7 @@ arrow,
   margin-bottom: 100px;
   border-radius: 2px;
 }
-p{
+
+/* p{
   font-size: 60px
-}
+} */
