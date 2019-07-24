@@ -1,42 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-
+<head>
   <title>My Profile</title>
   <link rel="stylesheet" href="/styles/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Assistant&display=swap" rel="stylesheet">
   <script src='javascripts/script.js'></script>
-  </head>
+</head>
   <body>
+    <div id="nav_bar"><p id="text_in_nav">log | log out!</p></div>
+    <br>
+    <br>
+    <br>
+    <div class="profile">
+      <div id="profileHeader">
+        <h1 id="profileTitle">my profile</h1>
+      </div>
 
+      <form class="profileForm" method="post">
+        <p>weight:</p>
+        <input type="text" name="weight" placeholder="weight" class="formInput"></input>
+        <p>height</p>
+        <input type="text" name="height" placeholder="height" class="formInput"></input>
+        <p>age</p>
+        <input type="text" name="age" placeholder="age" class="formInput"></input>
+        <p>gender</p>
+        <input type="text" name="gender" placeholder="gender" class="formInput"></input>
+        <button type="button" name="submit">submit</button>
+      </form>
 
-  <center> <h1> Your Profile  </h1> </center>
-  <center>  <p> hello! {{nickname}} </p> </center>
-  <div>
-</div>
-<form>
-  Weight:<br>
-  <input type="value" name="Weight" value="Weight"><br>
-  Height:<br>
-  <input type="value" name="Height" value="Height"><br>
-  Age:   <br>
-  <input type="Age" name="Age" value="Age"><br><br>
-  Gender: <br>
-  <input type="Gender" name="Gender" value="M/F"><br>
-  <br>
+      <div class="link">
+        go to my log!
+      </div>
 
-  <input type= "button" value= "Finish">
-  <br>
-  <center><input id="log" type="button" value = "Go to my Log!"></center>
-</form>
-
-<center> Your goal for today is ___ calories,<br> and ___ cups of water  </center>
-
-
-
-
+      <p>your goal for today is this</p>
+    </div>
 
   </body>
-
-
-
 </html>
