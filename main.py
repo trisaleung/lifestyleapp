@@ -72,6 +72,8 @@ class LogHandler(webapp2.RequestHandler):
         template_vars = {
             "amountofwater" : amountofwater
         }
+        log_template = the_jinja_env.get_template("/templates/log.html")
+        
         self.response.write(log_template.render(template_vars))
 
 class ProfileHandler(webapp2.RequestHandler):
