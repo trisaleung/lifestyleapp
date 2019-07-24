@@ -1,7 +1,19 @@
+<<<<<<< HEAD
 body  {
   font-family: serif;
   margin-top: inherit;
   font-style: italic;
+=======
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Assistant';
+  margin-top: inherit;
+  font-style: italic;
+  background-color: #F2EDE4;
+>>>>>>> 00d86d0abcde7bf450a7e8285a548b065ddf4bc9
   /* change later */
 }
 #Sam{
@@ -10,7 +22,12 @@ body  {
 h1 {
   text-align: center;
   padding: 50px;
+<<<<<<< HEAD
   color: white;
+=======
+  font-size: 44px;
+  font-style: normal;
+>>>>>>> 00d86d0abcde7bf450a7e8285a548b065ddf4bc9
 }
 
 input[type=button] {
@@ -18,12 +35,7 @@ input[type=button] {
   padding: 14px 20px;
   font-size: 20px;
   border: none;
-<<<<<<< HEAD
   border-radius: 5px;
-
-=======
-  border-radius: 8px;
->>>>>>> ade7521ac4a5e91e2b27a978b6f16b3463c95324
 }
 
 input[type=button]:hover {
@@ -47,7 +59,8 @@ input[name="meal"] {
 }
 
 .dropbutton {
-  background-color: #719E9B;
+  background-color: #838C61;
+  color: #FFFFFF;
   padding: 14px 20px;
   font-size: 20px;
   border: none;
@@ -58,13 +71,13 @@ input[name="meal"] {
 }
 
 .dropbutton:hover {
-  background-color: #81B5B1;
+  background-color: #96A47C;
   border-radius: 2px;
   transition-duration: 0.4s;
 }
 
 .dropbutton:focus {
-  background-color: #A1E2DC;
+  background-color: #BAC4A9;
   border-radius: 2px;
   transition-duration: 0.2s;
   border: none;
@@ -92,24 +105,95 @@ input[name="meal"] {
 }
 
 #nav_bar {
-  height: 80px;
-  width: 200%;
-  background-color: #71667B;
+  background-color: #374034;
+  height: 60px;
   margin-top: -30px;
-  margin-left: -10px;
-
 }
 
+#text_in_nav {
+  text-align: right;
+  font-family: 'Assistant';
+  color: #F2EDE4;
+  padding: 40px;
+}
+
+.sticky {
+  position: fixed;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+/*giant box in the nav page log page*/
+#nav_bar_borders {
+  height: 220px;
+  width: 62%;
+  background-color: #F2EDE4;
+  margin-top: -60px;
+  margin-left: -10px;
+  border-style: solid;
+  border-width: 330px;
+  border-color: #374034;
+}
+
+/*scrolling arrows for the log page*/
+arrow,
+.arrow:before {
+  position: absolute;
+  left: 50%;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  margin: -20px 0 0 -20px;
+  -webkit-transform: rotate(45deg);
+  border-left: none;
+  border-top: none;
+  border-right: 2px #fff solid;
+  border-bottom: 2px #fff solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 150px;
+}
+
+
+.arrow:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  margin: -10px 0 0 -10px;
+  border-left: none;
+  border-top: none;
+  border-right: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: arrow;
+}
+
+/* @keyframes arrow 0% {
+  0%
+    opacity: 1;
+  100%
+    opacity: 0;
+    transform: translate(-10px, -10px);
+} */
+
 #menu {
-  border-color: #FFCAD4;
+  border-color: #374034;
   border-style: solid;
   border-width: 10px;
-  background-color: #EEEEEE;
-  margin-right: 100px;
-  margin-left: 100px;
+  background-color: #F2EDE4;
+  margin-right: 230px;
+  margin-left: 230px;
   padding: 30px;
   margin-bottom: 100px;
-  border-radius: 8px;
+  border-radius: 2px;
 }
 p{
   font-size: 60px

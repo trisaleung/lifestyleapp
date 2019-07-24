@@ -1,3 +1,6 @@
+var header = document.getElementById("nav_bar");
+var sticky = header.offsetTop;
+
 function dropdownFunction() {
  document.getElementById("dropdown1").classList.toggle("show");
 }
@@ -14,7 +17,18 @@ function dropdownFunction4() {
  document.getElementById("dropdown4").classList.toggle("show");
 }
 
-// Close the dropdown menu if the user clicks outside of it
+function dropdownFunction5() {
+ document.getElementById("dropdown5").classList.toggle("show");
+}
+
+function stickyHeader() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+
 window.onclick = function(event) {
  if (!event.target.matches('.dropbutton')) {
    var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -27,3 +41,7 @@ window.onclick = function(event) {
    }
  }
 }
+
+window.onscroll = function(event) {
+  stickyHeader()
+};
