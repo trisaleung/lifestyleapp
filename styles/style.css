@@ -88,6 +88,7 @@ input[name="submitbutton"]:hover {
   height: 5px;
   margin-top: 2.2%;
   margin-left: -8px;
+  /* margin-right: 6px; */
   position: fixed;
   width: 100%;
   z-index: 3;
@@ -114,9 +115,13 @@ input[name="submitbutton"]:hover {
 
 /*giant box in the nav page log page*/
 #nav_bar_borders {
+<<<<<<< HEAD
+  /* height: 100%;
+=======
   height: 80%;
+>>>>>>> af4b894639702c88b98280b85cbf9c1754c3b09d
   width: 104%;
-  margin-left: -2%;
+  margin-left: -2%; */
   background-color: #374034;
   margin-top: -6%;
 }
@@ -152,7 +157,7 @@ input[name="submitbutton"]:hover {
 
 .profileForm {
   margin-left: 30%;
-  margin-top: -50px;
+  margin-top: -40px;
 }
 
 #profileHeader {
@@ -166,25 +171,26 @@ input[name="submitbutton"]:hover {
   border-width: 10px;
   margin-left: 30%;
   margin-right: 30%;
-  margin-top: 9%;
+  margin-top: 6%;
 }
 
 .name {
   color: #5F9EA0;
   font-family: 'Fascinate', cursive;
-  font-size: 60px;
+  font-size: 80px;
   height: 100%;
 }
 
-#navbarlink {
+.navbarlink {
   color: #F2EDE4;
   text-decoration: none;
 }
 
-#navbarlink:hover {
+.navbarlink:hover {
   color: #D0BCA0;
   text-decoration: underline;
 }
+
 
 .link {
   height: 30px;
