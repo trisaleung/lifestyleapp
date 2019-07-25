@@ -31,27 +31,6 @@ h1 {
   color: #3A301C;
 }
 
-input[type=button] {
-  background-color: #719E9B;
-  padding: 14px 20px;
-  font-size: 20px;
-  border: none;
-  border-radius: 5px;
-}
-
-input[type=button]:hover {
-  background-color: #81B5B1;
-  border-radius: 2px;
-  transition-duration: 0.4s;
-}
-
-input[type=button]:focus {
-  background-color: #A1E2DC;
-  border-radius: 2px;
-  transition-duration: 0.2s;
-  border: none;
-}
-
 input[name="meal"] {
   margin-left: 250px;
   display: block;
@@ -59,59 +38,31 @@ input[name="meal"] {
   margin-top: 60px;
 }
 
-.dropbutton {
-  background-color: #838C61;
-  color: #FAF8F5;
-  padding: 14px 20px;
-  font-size: 20px;
-  border: none;
-  border-radius: 8px;
-  margin-left: 100px;
-  display: block;
-  margin-top: 60px;
+input[type=text] {
+  padding: 2%;
+  margin-left: 5%;
+  width: 40%;
 }
 
-.dropbutton:hover {
-  background-color: #96A47C;
-  color: #F2ECE4;
-  border-radius: 2px;
-  transition-duration: 0.4s;
+input[name="submitbutton"] {
+  border-bottom: none;
+  background-color: #374034;
+  color: #F2EDE4;
+  padding: 1.6%;
+  font-size: 14px;
+  margin-left: 3%;
 }
 
-.dropbutton:focus {
-  background-color: #BAC4A9;
-  border-radius: 2px;
-  color: #6E5735;
-  transition-duration: 0.2s;
-  border: none;
+input[name="submitbutton"]:hover {
+  background-color: #80937A;
+  color: #3A301C;
 }
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: block;
-  /* position: absolute; */
-  background-color: #FFFFFF;
-  margin-left: 250px;
-  padding: 20px;
-}
-
-/* .show {
-  display: block;
-} */
 
 .scrollmenu {
   font-size: 24px;
   padding: 24px;
   width: 20%;
   margin-right: -8px;
-}
-
-#dropdownLast {
-  margin-bottom: 70px;
 }
 
 #nav_bar {
