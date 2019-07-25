@@ -55,7 +55,7 @@ class LogHandler(webapp2.RequestHandler):
         print(fs)
         log_template = the_jinja_env.get_template("/templates/log.html")
 
-        print(fs.foods_search('eggs'))
+        print(fs.foods_search('bread'))
 
 
         amountofwater = 8
@@ -67,15 +67,10 @@ class LogHandler(webapp2.RequestHandler):
         user = users.get_current_user()
         logout_url = users.create_logout_url("/")
         template_vars = {
-<<<<<<< HEAD
 
         "amountofwater" : "",
         "logout_url" : logout_url
 
-=======
-        "amountofwater" : "",
-        "logout_url" : logout_url
->>>>>>> d532585e3031b69b18484c74856e88808d1414d4
         }
         log_template = the_jinja_env.get_template("/templates/log.html")
 
