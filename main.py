@@ -4,14 +4,18 @@ import json
 import jinja2
 import os
 import random
-# from fatsecret import Fatsecret
+from fatsecret import Fatsecret
 
+consumer_key = "2de49a3300b94286944e4cbae4986364"
+consumer_secret = "95f02e15797b47d0b6560e15c4c86740"
 
 the_jinja_env = jinja2.Environment(
     loader = jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions = ['jinja2.ext.autoescape'],
     undefined = jinja2.StrictUndefined,
     autoescape = True
+
+
 )
 
 # jinja_current_directory = jinja2.Environment(
@@ -46,10 +50,13 @@ class LoggedInHandler(webapp2.RequestHandler):
 
 class LogHandler(webapp2.RequestHandler):
     def get(self):
-        # life_key ="2de49a3300b94286944e4cbae4986364"
-        # fs = Fatsecret(consumer_key, consumer_secret)
-        # print(Fatsecret)
+        life_key ="2de49a3300b94286944e4cbae4986364"
+        fs = Fatsecret(consumer_key, consumer_secret)
+        print(fs)
         log_template = the_jinja_env.get_template("/templates/log.html")
+
+        print(fs.foods_search('eggs'))
+
 
         amountofwater = 8
         logout_url = users.create_logout_url("/")
@@ -60,8 +67,15 @@ class LogHandler(webapp2.RequestHandler):
         user = users.get_current_user()
         logout_url = users.create_logout_url("/")
         template_vars = {
+<<<<<<< HEAD
+
         "amountofwater" : "",
         "logout_url" : logout_url
+
+=======
+        "amountofwater" : "",
+        "logout_url" : logout_url
+>>>>>>> d532585e3031b69b18484c74856e88808d1414d4
         }
         log_template = the_jinja_env.get_template("/templates/log.html")
 

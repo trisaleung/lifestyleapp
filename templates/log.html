@@ -4,6 +4,7 @@
   <link rel="stylesheet" href="/styles/style.css">
   <link href="https://fonts.googleapis.com/css?family=Assistant&display=swap" rel="stylesheet">
   <script src = "scripts/script.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -30,49 +31,68 @@
   <br>
   <br>
 
-  <div class="stickybar">
-    <h2 id="stickybartitle">calories</h2>
-    <div id="calories">
-      caloriestoday || caloriesgoal
-    </div>
-    <h2 id="stickybartitle">food</h2>
-    <div id="foodlist">
-      food: calories
-    </div>
-  </div>
-
+    <!-- <div id="stickybar">
+      <h2 id="stickybartitle">calories</h2>
+      <div id="calories">
+        caloriestoday || caloriesgoal
+      </div>
+      <h2 id="stickybartitle">food</h2>
+      <div id="foodlist">
+        food: calories
+      </div>
+    </div> -->
 
   <div id = "menu">
     <div class = "menu" id = "breakfast">
       <h2 id="options">breakfast</h2>
+        <form method = "post">
           <input type="text" placeholder="Search..">
           <input type="submit" name="submitbutton" value="enter">
+          <p>You've had {{amountofwater}} cups of water today!</p>
+        </form>
       </div>
+<<<<<<< HEAD
+    </div>
+    
+=======
 
+>>>>>>> d532585e3031b69b18484c74856e88808d1414d4
     <div class = "menu" id = "lunch">
-      <h2 id="options">lunch</h2>
-        <input type="text" placeholder="Search..">
-        <input type="submit" name="submitbutton" value="enter">
+        <h2 id="options">lunch</h2>
+        <form method = "post">
+          <input type="text" placeholder="Search..">
+          <input type="submit" name="submitbutton" value="enter">
+          <p>You've had {{amountofwater}} cups of water today!</p>
+        </form>
       </div>
 
     <div class = "menu" id = "dinner">
       <h2 id="options">dinner</h2>
+        <form method = "post">
           <input type="text" placeholder="Search..">
           <input type="submit" name="submitbutton" value="enter">
+          <p>You've had {{amountofwater}} cups of water today!</p>
+        </form>
       </div>
 
 
     <div class = "menu" id = "snacks">
       <h2 id="options">snacks</h2>
-        <input type="text" placeholder="Search..">
-        <input type="submit" name="submitbutton" value="enter">
+        <form method = "post">
+          <input type="text" placeholder="Search..">
+          <input type="submit" name="submitbutton" value="enter">
+          <p>You've had {{amountofwater}} cups of water today!</p>
+        </form>
       </div>
 
     <div class = "menu" id = "water">
       <h2 id="options">water</h2>
       <form class="waterAmount" method="post">
-        <input type="text" name="amountofwater" placeholder="x cups of water">
+        <!-- <input type="text" name="amountofwater" placeholder="x cups of water"> -->
         <input type="submit" name="submitbutton" value="enter">
+        <form onsubmit="return false;">
+        <input class="button button3" type="number" id="myNumber" value="" min="0" max="100">
+        <input type="submit" id="btnmyNumber">
         <p>You've had {{amountofwater}} cups of water today!</p>
         <p>You need more!</p>
       </form>

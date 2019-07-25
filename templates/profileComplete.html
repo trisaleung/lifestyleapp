@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Profile</title>
+  <link rel="stylesheet" href="/styles/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Assistant&display=swap" rel="stylesheet">
+  <script src='scripts/script.js'></script>
+</head>
+  <body>
+    <div id="nav_bar"><p id="text_in_nav"><a href="/log" class ="navbarlink">my log</a>
+      | <a href= {{logout_url}} class="navbarlink"> log out!</a></p></div>
+    <br>
+    <br>
+    <br>
+
+    <div class="name">
+      <h1>Lifestyle</h1>
+    </div>
+
+    <div class="profile">
+      <div id="profileHeader">
+        <h1 id="profileTitle">my profile</h1>
+      </div>
+
+        <p>weight: usersWeight</p>
+        <p>height usersHeight</p>
+        <p>age: usersAge</p>
+        <p>gender usersGender</p>
+
+      <div class="link">
+        <a href="/log" id = "logbutton"><div id="logbuttontext">go to my log!</div></a>
+      </div>
+
+      <p id = "goal">your goal for today is this</p>
+    </div>
+
+  </body>
+</html>
