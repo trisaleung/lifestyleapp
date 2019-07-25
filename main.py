@@ -56,7 +56,7 @@ class LogHandler(webapp2.RequestHandler):
         print(fs)
         log_template = the_jinja_env.get_template("/templates/log.html")
 
-        print(fs.foods_search('eggs'))
+        print(fs.foods_search('bread'))
 
 
         amountofwater = 8
