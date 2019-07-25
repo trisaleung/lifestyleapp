@@ -57,9 +57,16 @@ class LogHandler(webapp2.RequestHandler):
         life_key ="2de49a3300b94286944e4cbae4986364"
         # fs = Fatsecret(consumer_key, consumer_secret)
         # print(Fatsecret)
+        user = users.get_current_user()
+        logout_url = users.create_logout_url("/")
         template_vars = {
+<<<<<<< HEAD
+        "amountofwater" : "",
+        "logout_url" : logout_url
+=======
             "amountofwater" : "",
             "logout_url": logout_url
+>>>>>>> af4b894639702c88b98280b85cbf9c1754c3b09d
         }
         log_template = the_jinja_env.get_template("/templates/log.html")
 
@@ -82,19 +89,15 @@ class ProfileHandler(webapp2.RequestHandler):
         profile_template = the_jinja_env.get_template("/templates/profile.html")
 
         user = users.get_current_user()
-        nickname = user.nickname()
+        # nickname = user.nickname()
         # print nickname
 
         logout_url = users.create_logout_url("/")
 
-        #hopefully once you log in, you'll be redirected to the templates page
-        #and it will fill in your nickname and have a logout url
-
         template_vars = {
-            "nickname" : nickname,
+            # "nickname" : nickname,
             "logout_url" : logout_url,
         }
-
         self.response.write(profile_template.render(template_vars))
 
         #not sure how you guys are doing the editing thing and if it needs a post or not
