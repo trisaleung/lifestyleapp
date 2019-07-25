@@ -115,11 +115,8 @@ input[name="submitbutton"]:hover {
 
 /*giant box in the nav page log page*/
 #nav_bar_borders {
-<<<<<<< HEAD
   /* height: 100%;
-=======
   height: 80%;
->>>>>>> af4b894639702c88b98280b85cbf9c1754c3b09d
   width: 104%;
   margin-left: -2%; */
   background-color: #374034;
