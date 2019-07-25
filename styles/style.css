@@ -137,12 +137,19 @@ input[name="submitbutton"]:hover {
   border-style: solid;
   border-width: 10px;
   background-color: #F2EDE4;
+  border-right: 400px solid #A8B5A4;
   margin-right: 20%;
   margin-left: 20%;
   padding: 5%;
   margin-bottom: 10%;
   margin-top: 10%;
   border-radius: 2px;
+}
+
+.foodlist {
+  z-index: 2;
+  margin-left: 130%;
+  margin-top: -20%;
 }
 
 #options {
