@@ -1,0 +1,10 @@
+../fatsecret/__init__.py
+../fatsecret/__init__.pyc
+../fatsecret/fatsecret.py
+../fatsecret/fatsecret.pyc
+PKG-INFO
+SOURCES.txt
+dependency_links.txt
+not-zip-safe
+requires.txt
+top_level.txt

@@ -16,6 +16,7 @@ wrap.on("scroll", function(e){
 //   stickyHeader()
 // };
 
+<<<<<<< HEAD
 // var wrap = $("#sticky");
 //
 // wrap.on("scroll", function(e)){
@@ -24,4 +25,17 @@ wrap.on("scroll", function(e){
 //   } else {
 //     wrap.
 //   }
+=======
+window.onscroll = function(event) {
+  stickyHeader()
+};
+
+var input = document.getElementById("userInput").value;
+
+
+}}
+
+// function foodSearch(){   ---> grab user input
+//
+>>>>>>> 1e7980e386dd3a5405034c5c896885dfad4a2a77
 // }
