@@ -5,6 +5,7 @@ import jinja2
 import os
 import random
 from fatsecret import Fatsecret
+from lifestyle_model import User, Meal
 
 consumer_key = "2de49a3300b94286944e4cbae4986364"
 consumer_secret = "95f02e15797b47d0b6560e15c4c86740"
@@ -105,6 +106,44 @@ class ProfileHandler(webapp2.RequestHandler):
         self.response.write(profile_template.render(template_vars))
 
         #not sure how you guys are doing the editing thing and if it needs a post or not
+
+    def post(self):
+        weight = self.request.get("weight")
+        height = self.request.get("height")
+        age = self.request.get("age")
+        gender = self.request.get("gender")
+
+        bmi = 16
+        # bmi = ( weight / (height * height)) * 703
+        wateramount = 8
+
+        calories = 0
+
+        if gender == "male":
+            calories = 2000
+        elif gender == "female":
+            calories = 2000
+
+        new_user = User(height=int(height), weight=int(weight), age=int(age), gender=gender, bmi=int(bmi), wateramount=int(wateramount),calories=int(calories))
+
+        new_user.put()
+
+        user_query = User.query().fetch()
+
+        profile_template = the_jinja_env.get_template("/templates/profile.html")
+
+        user = users.get_current_user()
+        # nickname = user.nickname()
+        # print nickname
+
+        logout_url = users.create_logout_url("/")
+
+        template_vars = {
+            # "nickname" : nickname,
+            "logout_url" : logout_url,
+        }
+        self.response.write(profile_template.render(template_vars))
+
 
 app = webapp2.WSGIApplication([
     ("/", MainHandler),
