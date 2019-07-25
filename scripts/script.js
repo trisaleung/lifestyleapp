@@ -13,7 +13,7 @@ window.onscroll = function(event) {
   stickyHeader()
 };
 
-vat input = document.getElementById("userInput").value;
+var input = document.getElementById("userInput").value;
 
 
 }}

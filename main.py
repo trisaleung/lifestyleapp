@@ -7,7 +7,7 @@ import random
 from fatsecret import Fatsecret
 
 consumer_key = "2de49a3300b94286944e4cbae4986364"
-consumer_secret = "2de49a3300b94286944e4cbae4986364"
+consumer_secret = "95f02e15797b47d0b6560e15c4c86740"
 
 the_jinja_env = jinja2.Environment(
     loader = jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -52,8 +52,11 @@ class LogHandler(webapp2.RequestHandler):
     def get(self):
         life_key ="2de49a3300b94286944e4cbae4986364"
         fs = Fatsecret(consumer_key, consumer_secret)
-        print(Fatsecret)
+        print(fs)
         log_template = the_jinja_env.get_template("/templates/log.html")
+
+        print(fs.foods_search('eggs'))
+
 
         amountofwater = 8
         logout_url = users.create_logout_url("/")
@@ -67,9 +70,6 @@ class LogHandler(webapp2.RequestHandler):
 
         "amountofwater" : "",
         "logout_url" : logout_url
-
-            "amountofwater" : "",
-            "logout_url": logout_url
 
         }
         log_template = the_jinja_env.get_template("/templates/log.html")
