@@ -167,54 +167,16 @@ input[name="meal"] {
   width: 104%;
   margin-left: -2%;
   background-color: #374034;
+  margin-top: -6%;
 }
 
-/*scrolling arrows for the log page*/
-arrow,
-.arrow:before {
-  position: absolute;
-  left: 50%;
+#logtext {
+  background-color: #F2EDE4;
+  z-index: 2;
+  text-align: center;
+  margin-left: 30%;
+  margin-right: 30%;
 }
-
-.arrow {
-  width: 40px;
-  height: 40px;
-  top: 50%;
-  margin: -20px 0 0 -20px;
-  -webkit-transform: rotate(45deg);
-  border-left: none;
-  border-top: none;
-  border-right: 2px #fff solid;
-  border-bottom: 2px #fff solid;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: 15%;
-}
-
-
-.arrow:before {
-  content: '';
-  width: 20px;
-  height: 20px;
-  top: 50%;
-  margin: -10px 0 0 -10px;
-  border-left: none;
-  border-top: none;
-  border-right: 1px #fff solid;
-  border-bottom: 1px #fff solid;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-name: arrow;
-}
-
-/* @keyframes arrow 0% {
-  0%
-    opacity: 1;
-  100%
-    opacity: 0;
-    transform: translate(-10px, -10px);
-} */
 
 .menu {
   border-color: #374034;
