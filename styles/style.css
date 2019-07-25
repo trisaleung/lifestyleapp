@@ -137,6 +137,7 @@ input[name="meal"] {
   height: 5px;
   margin-top: 40px;
   margin-left: -8px;
+  /* margin-right: 6px; */
   position: fixed;
   width: 100%;
   z-index: 3;
@@ -163,9 +164,9 @@ input[name="meal"] {
 
 /*giant box in the nav page log page*/
 #nav_bar_borders {
-  height: 100%;
+  /* height: 100%;
   width: 104%;
-  margin-left: -2%;
+  margin-left: -2%; */
   background-color: #374034;
   margin-top: -6%;
 }
@@ -192,7 +193,7 @@ input[name="meal"] {
 
 .profileForm {
   margin-left: 30%;
-  margin-top: -50px;
+  margin-top: -40px;
 }
 
 #profileHeader {
@@ -206,25 +207,26 @@ input[name="meal"] {
   border-width: 10px;
   margin-left: 30%;
   margin-right: 30%;
-  margin-top: 9%;
+  margin-top: 6%;
 }
 
 .name {
   color: #5F9EA0;
   font-family: 'Fascinate', cursive;
-  font-size: 60px;
+  font-size: 80px;
   height: 100%;
 }
 
-#navbarlink {
+.navbarlink {
   color: #F2EDE4;
   text-decoration: none;
 }
 
-#navbarlink:hover {
+.navbarlink:hover {
   color: #D0BCA0;
   text-decoration: underline;
 }
+
 
 .link {
   height: 30px;
