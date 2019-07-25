@@ -22,7 +22,7 @@ h1 {
   border-left: 2px solid #80937A;
   border-right: 2px solid #80937A;
   border-bottom: none;
-  background-color: #859B7E;
+  background-color: #DD9F8E;
   color: #F2EDE4;
 }
 
@@ -75,7 +75,7 @@ input[name="submitbutton"]:hover {
   z-index: 3;
   text-align: right;
   font-family: 'Assistant';
-  color: #F2EDE4;
+  color: #DD9F8E;
   padding: 40px;
 }
 
@@ -94,7 +94,7 @@ input[name="submitbutton"]:hover {
   z-index: 3;
   text-align: right;
   font-family: 'Assistant';
-  color: #F2EDE4;
+  color: #DD9F8E;
   padding: 40px;
 }
 
@@ -138,7 +138,7 @@ input[name="submitbutton"]:hover {
   border-color: #859B7E;
   border-style: solid;
   border-width: 10px;
-  background-color: #F2EDE4;
+  background-color: #DD9F8E;
   margin-right: 30%;
   margin-left: 30%;
   padding: 5%;
@@ -168,7 +168,7 @@ input[name="submitbutton"]:hover {
 }
 
 .profile {
-  background-color: #F2EDE4;
+  background-color: #DD9F8E;
   border-color: #859B7E;
   border-style: solid;
   border-width: 10px;
@@ -178,7 +178,7 @@ input[name="submitbutton"]:hover {
 }
 
 .name {
-  color: #5F9EA0;
+  color: #DD9F8E;
   font-family: 'Fascinate', cursive;
   font-size: 80px;
   height: 100%;
