@@ -60,10 +60,15 @@ class LogHandler(webapp2.RequestHandler):
         user = users.get_current_user()
         logout_url = users.create_logout_url("/")
         template_vars = {
+<<<<<<< HEAD
         "amountofwater" : "",
         "logout_url" : logout_url
             # "amountofwater" : "",
             # "logout_url": logout_url
+=======
+            "amountofwater" : "",
+            "logout_url": logout_url
+>>>>>>> f988c85cf7ce4d14b7dd3bc85344024b8025defa
         }
         log_template = the_jinja_env.get_template("/templates/log.html")
 
