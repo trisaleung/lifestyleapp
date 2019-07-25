@@ -52,6 +52,7 @@ class LogHandler(webapp2.RequestHandler):
         log_template = the_jinja_env.get_template("/templates/log.html")
 
         amountofwater = 8
+        logout_url = users.create_logout_url("/")
 
         life_key ="2de49a3300b94286944e4cbae4986364"
         # fs = Fatsecret(consumer_key, consumer_secret)
@@ -59,8 +60,13 @@ class LogHandler(webapp2.RequestHandler):
         user = users.get_current_user()
         logout_url = users.create_logout_url("/")
         template_vars = {
+<<<<<<< HEAD
         "amountofwater" : "",
         "logout_url" : logout_url
+=======
+            "amountofwater" : "",
+            "logout_url": logout_url
+>>>>>>> af4b894639702c88b98280b85cbf9c1754c3b09d
         }
         log_template = the_jinja_env.get_template("/templates/log.html")
 
@@ -68,9 +74,11 @@ class LogHandler(webapp2.RequestHandler):
 
     def post(self):
         amountofwater = self.request.get("amountofwater")
+        logout_url = users.create_logout_url("/")
 
         template_vars = {
-            "amountofwater" : amountofwater
+            "amountofwater" : amountofwater,
+            "logout_url" : logout_url
         }
         log_template = the_jinja_env.get_template("/templates/log.html")
 
