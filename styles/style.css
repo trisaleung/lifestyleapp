@@ -241,6 +241,13 @@ arrow,
   margin-top: 9%;
 }
 
+.name {
+  color: #5F9EA0;
+  font-family: 'Fascinate', cursive;
+  font-size: 60px;
+  height: 100%;
+}
+
 #navbarlink {
   color: #F2EDE4;
   text-decoration: none;
