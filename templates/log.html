@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
   <title>Log</title>
-  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/lifestyleapp/style.css">
   <link href="https://fonts.googleapis.com/css?family=Assistant&display=swap" rel="stylesheet">
   <script src = "scripts/script.js"></script>
 </head>
@@ -34,8 +34,11 @@
         <div class = "dropdown">
         <button class = "dropbutton">breakfast</button>
         <div class="dropdown-content">
-          <input type="text" placeholder="Search..">
+          <!-- <form onsubmit="return false;">
+          <input class="button button3" type="number" id="myNumber" value="" min="0" max="30">
+          <input type="submit" id="btnmyNumber"> -->
 
+          </form>
         </div>
       </div>
     </div>
@@ -67,8 +70,11 @@
     <button class = "dropbutton">water</button>
     <div class="dropdown-content">
       <form class="waterAmount" method="post">
-        <input type="text" name="amountofwater" placeholder="x cups of water">
+        <!-- <input type="text" name="amountofwater" placeholder="x cups of water"> -->
         <input type="submit" name="submitbutton" value="enter">
+        <form onsubmit="return false;">
+        <input class="button button3" type="number" id="myNumber" value="" min="0" max="100">
+        <input type="submit" id="btnmyNumber">
         <p>You've had {{amountofwater}} cups of water today!</p>
       </form>
     </div>
