@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
   <title>Log</title>
-  <link rel="stylesheet" href="/lifestyleapp/style.css">
+  <link rel="stylesheet" href="/styles/style.css">
   <link href="https://fonts.googleapis.com/css?family=Assistant&display=swap" rel="stylesheet">
   <script src = "scripts/script.js"></script>
 </head>
@@ -11,7 +11,7 @@
 
   <div id="nav_bar_borders">
     <div id="inside">
-      <h1>my log</h1>
+      <h1 id = "logtext">my log</h1>
     </div>
     <div id="nav_menu">
       <form class="options" method="post">
@@ -25,7 +25,6 @@
         <button type="button" name="scrollbutton" value = "water" class = "scrollmenu">water</button> -->
       </form>
     </div>
-    <a href="#menu"><div class="arrow"></div></a>
   </div>
   <br>
   <br>
@@ -34,9 +33,10 @@
         <div class = "dropdown">
         <button class = "dropbutton">breakfast</button>
         <div class="dropdown-content">
-          <!-- <form onsubmit="return false;">
-          <input class="button button3" type="number" id="myNumber" value="" min="0" max="30">
-          <input type="submit" id="btnmyNumber"> -->
+          <form id="form" onsubmit="return false;">
+      <input style= type="text" id="userInput" />
+      <input style= type="submit" onclick="othername();" />
+  </form>
 
           </form>
         </div>

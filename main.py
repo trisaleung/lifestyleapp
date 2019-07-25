@@ -4,14 +4,18 @@ import json
 import jinja2
 import os
 import random
-# from fatsecret import Fatsecret
+from fatsecret import Fatsecret
 
+consumer_key = "2de49a3300b94286944e4cbae4986364"
+consumer_secret = "2de49a3300b94286944e4cbae4986364"
 
 the_jinja_env = jinja2.Environment(
     loader = jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions = ['jinja2.ext.autoescape'],
     undefined = jinja2.StrictUndefined,
     autoescape = True
+
+
 )
 
 # jinja_current_directory = jinja2.Environment(
@@ -46,9 +50,9 @@ class LoggedInHandler(webapp2.RequestHandler):
 
 class LogHandler(webapp2.RequestHandler):
     def get(self):
-        # life_key ="2de49a3300b94286944e4cbae4986364"
-        # fs = Fatsecret(consumer_key, consumer_secret)
-        # print(Fatsecret)
+        life_key ="2de49a3300b94286944e4cbae4986364"
+        fs = Fatsecret(consumer_key, consumer_secret)
+        print(Fatsecret)
         log_template = the_jinja_env.get_template("/templates/log.html")
 
         amountofwater = 8

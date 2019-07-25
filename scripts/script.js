@@ -13,16 +13,11 @@ window.onscroll = function(event) {
   stickyHeader()
 };
 
-
-document.getElementById("btnmyNumber").addEventListener("click", myFunctionVar);
-function myFunctionVar() {
-var numberr = parseInt(document.getElementById("myNumber").value, 10);
-// alert(numberr);
-if ( numberr > 1) {
-
-  document.getElementById("minusE5").style.display = "none";
-
-alert("number")
+vat input = document.getElementById("userInput").value;
 
 
 }}
+
+// function foodSearch(){   ---> grab user input
+//
+// }
