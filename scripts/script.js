@@ -1,14 +1,27 @@
-var header = document.getElementById("nav_bar");
+var header = document.getElementById("stickybar");
 var sticky = header.offsetTop;
+var wrap = $("#stickybar");
 
-function stickyHeader() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
+// function stickyHeader() {
+
+wrap.on("scroll", function(e){
+  if (this.scrollTop > 400) {
+    wrap.classList.addClass("stick");
   } else {
-    header.classList.remove("sticky");
+    wrap.classList.removeClass("stick");
   }
-}
+});
+//
+// window.onscroll = function(event) {
+//   stickyHeader()
+// };
 
-window.onscroll = function(event) {
-  stickyHeader()
-};
+// var wrap = $("#sticky");
+//
+// wrap.on("scroll", function(e)){
+//   if(this.scrollTop > 200) {
+//     wrap.addClass("sticky");
+//   } else {
+//     wrap.
+//   }
+// }
