@@ -130,7 +130,7 @@ class ProfileHandler(webapp2.RequestHandler):
 
         user_query = User.query().fetch()
 
-        profile_template = the_jinja_env.get_template("/templates/profile.html")
+        profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
 
         user = users.get_current_user()
         # nickname = user.nickname()
