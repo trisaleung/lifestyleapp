@@ -27,7 +27,7 @@ h1 {
 }
 
 .scrollmenu:hover {
-  background-color: #80937A;
+  background-color: #DD9F8E;
   color: #3A301C;
 }
 
@@ -115,10 +115,10 @@ input[name="submitbutton"]:hover {
 
 /*giant box in the nav page log page*/
 #nav_bar_borders {
-  /* height: 100%;
+  height: 100%;
   height: 80%;
   width: 104%;
-  margin-left: -2%; */
+  margin-left: -2%;
   background-color: #859B7E;
   margin-top: -6%;
 }
