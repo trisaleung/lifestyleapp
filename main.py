@@ -15,8 +15,6 @@ the_jinja_env = jinja2.Environment(
     extensions = ['jinja2.ext.autoescape'],
     undefined = jinja2.StrictUndefined,
     autoescape = True
-
-
 )
 
 class MainHandler(webapp2.RequestHandler):
@@ -39,8 +37,8 @@ class LogHandler(webapp2.RequestHandler):
             fs = Fatsecret(consumer_key, consumer_secret)
             print(fs)
             log_template = the_jinja_env.get_template("/templates/log.html")
-
-            print(fs.foods_search('bread'))
+            #print(self.request.get('#foods123'))
+            #print(fs.foods_search(self.request.get('#foods123')))
 
 
             amountofwater = 8
@@ -64,7 +62,11 @@ class LogHandler(webapp2.RequestHandler):
     def post(self):
         amountofwater = self.request.get("amountofwater")
         logout_url = users.create_logout_url("/")
-
+        fs = Fatsecret(consumer_key, consumer_secret)
+        print(fs)
+        print('LogHandler.post')
+        print(self.request.get('foods123'))
+        print(fs.foods_search(self.request.get('foods123')))
         template_vars = {
             "amountofwater" : amountofwater,
             "logout_url" : logout_url
