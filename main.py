@@ -113,11 +113,28 @@ class ProfileHandler(webapp2.RequestHandler):
         self.response.write(user_template.render())
 
     def post(self):
-        pinentered = int(self.request.get("pinNumber"))
+        profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
 
+        pinentered = int(self.request.get("pinNumber"))
         user_query = User.query(User.pinNumber == pinentered).fetch()
 
-        print(user_query)
+        json = user_query
+
+        weight = json[0].weight
+        height = json[0].height
+        age = json[0].age
+
+        logout_url = users.create_logout_url("/")
+
+        template_vars = {
+            # "nickname" : nickname,
+            "logout_url" : logout_url,
+            "usersWeight" : weight,
+            "usersHeight" : height,
+            "usersAge" : age,
+            # "gender": usersGender
+        }
+        self.response.write(profile_template.render(template_vars))
         #
         #
         #
