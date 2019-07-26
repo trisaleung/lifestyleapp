@@ -19,12 +19,6 @@ the_jinja_env = jinja2.Environment(
 
 )
 
-# jinja_current_directory = jinja2.Environment(
-#     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
-#     extensions=['jinja2.ext.autoescape'],
-#     autoescape=True
-# )
-
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -33,12 +27,6 @@ class MainHandler(webapp2.RequestHandler):
         else:
             login_url = users.create_login_url("/")
             self.redirect(login_url)
-
-# class NoUserHandler(webapp2.RequestHandler):
-#     def get(self):
-#         login_url = users.create_login_url("/")
-#         start_template=the_jinja_env.get_template("templates/login.html")
-#         self.response.write('<a href="' + login_url + '">click here</a>')
 
 class LogHandler(webapp2.RequestHandler):
     def get(self):
