@@ -21,7 +21,7 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
         if user:
-            self.redirect("/pinenter")
+            self.redirect("/profile")
         else:
             login_url = users.create_login_url("/")
             self.redirect(login_url)
@@ -77,10 +77,67 @@ class LogHandler(webapp2.RequestHandler):
 
 class SignUpHandler(webapp2.RequestHandler):
     def get(self):
-        pass
+        user = users.get_current_user()
+
+        if user == None:
+            self.redirect("/")
+        else:
+            user_template = the_jinja_env.get_template("/templates/profile.html")
+
+            logout_url = users.create_logout_url("/")
+
+            template_vars = {
+                "logout_url" : logout_url
+            }
+
+            self.response.write(user_template.render(template_vars))
 
     def post(self):
-        pass
+        weight = self.request.get("weight")
+        height = self.request.get("height")
+        age = self.request.get("age")
+        gender = self.request.get("gender")
+        pin = self.request.get("pin")
+
+        bmi = 16
+        # bmi = ( weight / (height * height)) * 703
+        wateramount = 8
+
+        calories = 0
+
+        if gender == "male":
+            calories = 2000
+        elif gender == "female":
+            calories = 2000
+
+        new_user = User(height=int(height), weight=int(weight), age=int(age), gender=gender, bmi=int(bmi), wateramount=int(wateramount),calories=int(calories), pinNumber=int(pin))
+
+        new_user.put()
+
+        user_query = User.query().fetch()
+
+        height = new_user.height
+        weight = new_user.weight
+        age = new_user.age
+        gender = new_user.gender
+
+        profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
+
+        user = users.get_current_user()
+        # nickname = user.nickname()
+        # print nickname
+
+        logout_url = users.create_logout_url("/")
+
+        template_vars = {
+            # "nickname" : nickname,
+            "logout_url" : logout_url,
+            "usersWeight" : weight,
+            "usersHeight" : height,
+            "usersAge" : age,
+            # "gender": usersGender
+        }
+        self.response.write(profile_template.render(template_vars))
 
 # class ProfileHandler(webapp2.RequestHandler):
 #     def get(self):
@@ -108,9 +165,12 @@ class ProfileHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
 
-        user_template = the_jinja_env.get_template("/templates/pinenter.html")
+        if user == None:
+            self.redirect("/")
+        else:
+            user_template = the_jinja_env.get_template("/templates/pinenter.html")
 
-        self.response.write(user_template.render())
+            self.response.write(user_template.render())
 
     def post(self):
         profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
