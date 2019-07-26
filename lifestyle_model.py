@@ -3,6 +3,7 @@ from google.appengine.ext import ndb
 class User(ndb.Model):
     # username = ndb.StringProperty(required=True)
     # password = ndb.StringProperty(required=True)
+    pinNumber = ndb.IntegerProperty(required=True)
     height = ndb.IntegerProperty(required=True)
     weight = ndb.IntegerProperty(required=True)
     age = ndb.IntegerProperty(required=True)
