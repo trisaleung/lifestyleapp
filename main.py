@@ -67,8 +67,14 @@ class LogHandler(webapp2.RequestHandler):
         fs = Fatsecret(consumer_key, consumer_secret)
         print(fs)
         print(self.request.get('foods123'))
-        results = (fs.foods_search(self.request.get('foods123')))
-        print(results)
+        
+
+    # print(fs.foods_search(self.request.get('foods123')))
+        #
+        # user_query = User.query(ndb.GenericProperty("user_id")==user_id).fetch()
+        # json = user_query
+        #
+        # caloriesgoal = json[0].calories
 
         template_vars = {
             "amountofwater" : amountofwater,
@@ -102,8 +108,26 @@ class SignUpHandler(webapp2.RequestHandler):
         weight = self.request.get("weight")
         height = self.request.get("height")
         age = self.request.get("age")
+<<<<<<< HEAD
         gender = self.request.get("gender")
         pin = self.request.get("pin")
+=======
+        gender1 = self.request.get("gender1")
+        gender2 = self.request.get("gender2")
+        weightgoal = self.request.get("weightgoal")
+        weeklygoal = self.request.get("weeklymenu")
+
+        gender = ""
+
+        if gender2 == None:
+            gender = gender1
+        elif gender1 == None:
+            gender = gender2
+
+        # weightgoal = self.request.get("weightgoal")
+        # weeklytarget = self.request.get()
+        user_id = user.user_id()
+>>>>>>> f317f6e661b20caa26799b30446f3f32434ba25c
 
         bmi = 16
         # bmi = ( weight / (height * height)) * 703
@@ -111,12 +135,16 @@ class SignUpHandler(webapp2.RequestHandler):
 
         calories = 0
 
-        if gender == "male":
-            calories = 2000
-        elif gender == "female":
-            calories = 2000
+        # if gender == "male":
+        #     calories = 2000
+        # elif gender == "female":
+        #     calories = 2000
 
+<<<<<<< HEAD
         new_user = User(height=int(height), weight=int(weight), age=int(age), gender=gender, bmi=int(bmi), wateramount=int(wateramount),calories=int(calories), pinNumber=int(pin))
+=======
+        new_user = User(user_id=user_id, height=int(height), weight=int(weight), age=int(age), gender=gender, bmi=int(bmi), wateramount=int(wateramount),calories=int(calories), weightgoal=int(weightgoal), weeklytarget=int(weeklygoal))
+>>>>>>> f317f6e661b20caa26799b30446f3f32434ba25c
 
         new_user.put()
 
@@ -126,6 +154,10 @@ class SignUpHandler(webapp2.RequestHandler):
         weight = new_user.weight
         age = new_user.age
         gender = new_user.gender
+<<<<<<< HEAD
+=======
+        bmi = new_user.
+>>>>>>> f317f6e661b20caa26799b30446f3f32434ba25c
 
         profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
 
