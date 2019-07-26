@@ -154,7 +154,7 @@ class SignUpHandler(webapp2.RequestHandler):
         weight = new_user.weight
         age = new_user.age
         gender = new_user.gender
-        bmi = new_user.
+        bmi = new_user.bmi
 
         profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
 
@@ -197,6 +197,11 @@ class ProfileHandler(webapp2.RequestHandler):
                 weight = json[0].weight
                 height = json[0].height
                 age = json[0].age
+                gender = json[0].gender
+                bmi = json[0].bmi
+                wateramount = json[0].wateramount
+                caloriesgoal = json[0].calories
+
 
                 logout_url = users.create_logout_url("/")
 
@@ -206,7 +211,9 @@ class ProfileHandler(webapp2.RequestHandler):
                     "usersWeight" : weight,
                     "usersHeight" : height,
                     "usersAge" : age,
-                    # "gender": usersGender
+                    "userBMI" : bmi,
+                    "userwater" : wateramount,
+                    "caloriegoals" : caloriesgoal
                 }
                 self.response.write(profile_template.render(template_vars))
 

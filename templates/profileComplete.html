@@ -14,7 +14,7 @@
     <br>
 
     <div class="name">
-      <h1>Lifestyle</h1>
+      <h1>CalPal</h1>
     </div>
 
     <div class="profile">
@@ -25,12 +25,15 @@
         <p>weight: {{usersWeight}}</p>
         <p>height {{usersHeight}}</p>
         <p>age: {{usersAge}}</p>
+        <p>bmi: {{userBMI}}</p>
+        <p>cups of water: {{userwater}}</p>
+        <p>calorie goal: {{caloriegoals}}</p>
       </div>
       <div class="link">
         <a href="/log" id = "logbutton"><div id="logbuttontext">go to my log!</div></a>
       </div>
 
-      <p id = "goal">your goal for today is this</p>
+      <p id = "goal">your goal for today {{caloriegoals}} calories and {{userwater}} cups of water.</p>
     </div>
 
   </body>
