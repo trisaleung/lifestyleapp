@@ -18,3 +18,4 @@ class User(ndb.Model):
 class Meal(ndb.Model):
     mealname = ndb.StringProperty(required=True)
     calories = ndb.IntegerProperty(required=True)
+    user = ndb.KeyProperty(User)
