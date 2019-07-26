@@ -159,8 +159,9 @@ input[name="submitbutton"]:hover {
 }
 
 .profileForm {
-  margin-left: 30%;
-  margin-top: -40px;
+  margin-left: 20%;
+  margin-top: -20px;
+  display: flex;
 }
 
 #profileHeader {
@@ -172,8 +173,8 @@ input[name="submitbutton"]:hover {
   border-color: #859B7E;
   border-style: solid;
   border-width: 10px;
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 20%;
+  margin-right: 20%;
   margin-top: 2%;
 }
 
@@ -268,6 +269,13 @@ input[name="submitbutton"]:hover {
 
 .stick {
   position: fixed;
+}
+
+#narrow {
+  width: 200px;
+}
+#wide {
+  flex: 1;
 }
 /* p{
   font-size: 60px
