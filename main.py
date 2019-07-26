@@ -15,8 +15,6 @@ the_jinja_env = jinja2.Environment(
     extensions = ['jinja2.ext.autoescape'],
     undefined = jinja2.StrictUndefined,
     autoescape = True
-
-
 )
 
 # jinja_current_directory = jinja2.Environment(
@@ -51,36 +49,45 @@ class LoggedInHandler(webapp2.RequestHandler):
 
 class LogHandler(webapp2.RequestHandler):
     def get(self):
-        life_key ="2de49a3300b94286944e4cbae4986364"
-        fs = Fatsecret(consumer_key, consumer_secret)
-        print(fs)
-        log_template = the_jinja_env.get_template("/templates/log.html")
-
-        print(fs.foods_search('bread'))
-
-
-        amountofwater = 8
-        logout_url = users.create_logout_url("/")
-
-        life_key ="2de49a3300b94286944e4cbae4986364"
-        # fs = Fatsecret(consumer_key, consumer_secret)
-        # print(Fatsecret)
         user = users.get_current_user()
-        logout_url = users.create_logout_url("/")
-        template_vars = {
 
-        "amountofwater" : "",
-        "logout_url" : logout_url
+        if user == None:
+            self.redirect("/")
+        else:
+            life_key ="2de49a3300b94286944e4cbae4986364"
+            fs = Fatsecret(consumer_key, consumer_secret)
+            print(fs)
+            log_template = the_jinja_env.get_template("/templates/log.html")
+            #print(self.request.get('#foods123'))
+            #print(fs.foods_search(self.request.get('#foods123')))
 
-        }
-        log_template = the_jinja_env.get_template("/templates/log.html")
 
-        self.response.write(log_template.render(template_vars))
+            amountofwater = 8
+            logout_url = users.create_logout_url("/")
+
+            life_key ="2de49a3300b94286944e4cbae4986364"
+            # fs = Fatsecret(consumer_key, consumer_secret)
+            # print(Fatsecret)
+            user = users.get_current_user()
+            logout_url = users.create_logout_url("/")
+            template_vars = {
+
+            "amountofwater" : "",
+            "logout_url" : logout_url
+
+            }
+            log_template = the_jinja_env.get_template("/templates/log.html")
+
+            self.response.write(log_template.render(template_vars))
 
     def post(self):
         amountofwater = self.request.get("amountofwater")
         logout_url = users.create_logout_url("/")
-
+        fs = Fatsecret(consumer_key, consumer_secret)
+        print(fs)
+        print('LogHandler.post')
+        print(self.request.get('foods123'))
+        print(fs.foods_search(self.request.get('foods123')))
         template_vars = {
             "amountofwater" : amountofwater,
             "logout_url" : logout_url
@@ -91,19 +98,24 @@ class LogHandler(webapp2.RequestHandler):
 
 class ProfileHandler(webapp2.RequestHandler):
     def get(self):
-        profile_template = the_jinja_env.get_template("/templates/profile.html")
-
         user = users.get_current_user()
-        # nickname = user.nickname()
-        # print nickname
 
-        logout_url = users.create_logout_url("/")
+        if user == None:
+            self.redirect("/")
+        else:
+            profile_template = the_jinja_env.get_template("/templates/profile.html")
 
-        template_vars = {
-            # "nickname" : nickname,
-            "logout_url" : logout_url,
-        }
-        self.response.write(profile_template.render(template_vars))
+            user = users.get_current_user()
+            # nickname = user.nickname()
+            # print nickname
+
+            logout_url = users.create_logout_url("/")
+
+            template_vars = {
+                # "nickname" : nickname,
+                "logout_url" : logout_url,
+            }
+            self.response.write(profile_template.render(template_vars))
 
         #not sure how you guys are doing the editing thing and if it needs a post or not
 
@@ -130,6 +142,11 @@ class ProfileHandler(webapp2.RequestHandler):
 
         user_query = User.query().fetch()
 
+        height = new_user.height
+        weight = new_user.weight
+        age = new_user.age
+        gender = new_user.gender
+
         profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
 
         user = users.get_current_user()
@@ -141,6 +158,10 @@ class ProfileHandler(webapp2.RequestHandler):
         template_vars = {
             # "nickname" : nickname,
             "logout_url" : logout_url,
+            "usersWeight" : weight,
+            "usersHeight" : height,
+            "usersAge" : age,
+            # "gender": usersGender
         }
         self.response.write(profile_template.render(template_vars))
 

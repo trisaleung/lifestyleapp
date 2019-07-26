@@ -45,28 +45,28 @@
   <div id = "menu">
     <div class = "menu" id = "breakfast">
       <h2 id="options">breakfast</h2>
-        <form method = "post">
-          <input type="text" placeholder="Search..">
-          <input type="submit" name="submitbutton" value="enter">
+        <form method = "post" action="/log">
+          <input name="foods123" type="text" placeholder="Search.."/>
+          <input type="submit" name="submitbutton" value="enter"/>
       <center>    <p>You've had {{amountofwater}} cups of water today!</p> </center>
         </form>
       </div>
-
     </div>
+
     <div class = "menu" id = "lunch">
         <h2 id="options">lunch</h2>
-        <form method = "post">
-          <input type="text" placeholder="Search..">
-          <input type="submit" name="submitbutton" value="enter">
+        <form method = "post" action="/log">
+          <input name="foods123" type="text" placeholder="Search.."/>
+          <input type="submit" name="submitbutton" value="enter"/>
         </center>  <p>You've had {{amountofwater}} cups of water today!</p> </center>
         </form>
       </div>
 
     <div class = "menu" id = "dinner">
       <h2 id="options">dinner</h2>
-        <form method = "post">
-          <input type="text" placeholder="Search..">
-          <input type="submit" name="submitbutton" value="enter">
+        <form method = "post" action="/log">
+          <input name="foods123" type="text" placeholder="Search.."/>
+          <input type="submit" name="submitbutton" value="enter"/>
     <center>      <p>You've had {{amountofwater}} cups of water today!</p> </center>
         </form>
       </div>
@@ -74,9 +74,9 @@
 
     <div class = "menu" id = "snacks">
       <h2 id="options">snacks</h2>
-        <form method = "post">
-          <input type="text" placeholder="Search..">
-          <input type="submit" name="submitbutton" value="enter">
+        <form method = "post" action="/log">
+          <input name="foods123" type="text" placeholder="Search.."/>
+          <input type="submit" name="submitbutton" value="enter"/>
       <center>    <p>You've had {{amountofwater}} cups of water today!</p> </center>
         </form>
       </div>
@@ -86,8 +86,8 @@
       <form class="waterAmount" method="post">
         <!-- <input type="text" name="amountofwater" placeholder="x cups of water"> -->
         <form onsubmit="return false;">
-        <input class="button button3" type="number" id="myNumber" value="" min="0" max="100">
-        <input type="submit" name="submitbutton" value="enter">
+        <input class="button button3" type="number" id="myNumber" value="" min="0" max="100"/>
+        <input type="submit" name="submitbutton" value="enter"/>
     <center>    <p>You've had {{amountofwater}} cups of water today!</p>
         <p>You need more!</p> </center>
       </form>
