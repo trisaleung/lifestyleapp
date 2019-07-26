@@ -1,9 +1,7 @@
 from google.appengine.ext import ndb
 
 class User(ndb.Model):
-    # username = ndb.StringProperty(required=True)
-    # password = ndb.StringProperty(required=True)
-    pinNumber = ndb.IntegerProperty(required=True)
+    user_id = ndb.StringProperty(required=True)
     height = ndb.IntegerProperty(required=True)
     weight = ndb.IntegerProperty(required=True)
     age = ndb.IntegerProperty(required=True)
@@ -12,7 +10,11 @@ class User(ndb.Model):
     wateramount = ndb.IntegerProperty(required=True)
     calories = ndb.IntegerProperty(required=True)
 
+    #functions inside of object; cls represents class
+    @classmethod
+    def get_by_user(cls, user):
+        return cls.query().filter(cls.user_id == user.user_id()).get()
+
 class Meal(ndb.Model):
-    user = ndb.KeyProperty(User)
     mealname = ndb.StringProperty(required=True)
     calories = ndb.IntegerProperty(required=True)
