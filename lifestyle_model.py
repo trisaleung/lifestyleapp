@@ -21,3 +21,6 @@ class Meal(ndb.Model):
     mealname = ndb.StringProperty(required=True)
     calories = ndb.IntegerProperty(required=True)
     user = ndb.KeyProperty(User)
+# 
+# class Day(ndb.Model):
+#     meals = ndbKeyProperty(Meal, repeated=True)
