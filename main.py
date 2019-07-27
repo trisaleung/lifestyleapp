@@ -5,12 +5,7 @@ import jinja2
 import os
 import random
 from fatsecret import Fatsecret
-<<<<<<< HEAD
 from lifestyle_model import User, Meal
-=======
-from lifestyle_model import User, Meal #api
-from google.appengine.ext import ndb
->>>>>>> 70ff9f1a5adf6383dfb2b9cb114276c883852040
 
 consumer_key = "2de49a3300b94286944e4cbae4986364"
 consumer_secret = "95f02e15797b47d0b6560e15c4c86740"
@@ -22,7 +17,6 @@ the_jinja_env = jinja2.Environment(
     autoescape = True
 )
 
-#the first page; will redirect you to the profile if you are logged in, or send you to the login if you are not
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -32,7 +26,6 @@ class MainHandler(webapp2.RequestHandler):
             login_url = users.create_login_url("/")
             self.redirect(login_url)
 
-#the log page; will take your input (meal) and calculate the calories. you will be able to see the total calories you have had today and your goal, as well as a list of food that you have had.
 class LogHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -68,12 +61,6 @@ class LogHandler(webapp2.RequestHandler):
     def post(self):
 
 
-<<<<<<< HEAD
-=======
-
-    #shows your input after you submit
-    def post(self):
->>>>>>> 70ff9f1a5adf6383dfb2b9cb114276c883852040
         amountofwater = self.request.get("amountofwater")
         logout_url = users.create_logout_url("/")
         fs = Fatsecret(consumer_key, consumer_secret)
@@ -126,7 +113,6 @@ class LogHandler(webapp2.RequestHandler):
 
         self.response.write(log_template.render(template_vars))
 
-#will redirect you to this page if you are a new user. input your data in the get template and then it will show up in the post.
 class SignUpHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -135,8 +121,6 @@ class SignUpHandler(webapp2.RequestHandler):
             self.redirect("/")
         else:
             user_template = the_jinja_env.get_template("/templates/profile.html")
-
-            #profile.html is the page where you enter in your data
 
             logout_url = users.create_logout_url("/")
 
@@ -190,14 +174,10 @@ class SignUpHandler(webapp2.RequestHandler):
         weight = new_user.weight
         age = new_user.age
         gender = new_user.gender
-<<<<<<< HEAD
 
 
 
 
-=======
-        bmi = new_user.bmi
->>>>>>> 70ff9f1a5adf6383dfb2b9cb114276c883852040
 
         profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
 
@@ -217,7 +197,6 @@ class SignUpHandler(webapp2.RequestHandler):
         }
         self.response.write(profile_template.render(template_vars))
 
-<<<<<<< HEAD
 # class ProfileHandler(webapp2.RequestHandler):
 #     def get(self):
 #         user_query = User.query(User.pinNumber == pinentered).fetch()
@@ -240,9 +219,6 @@ class SignUpHandler(webapp2.RequestHandler):
 #
 #         self.redirect("/log")
 
-=======
-#your profile. includes all the data you put in earlier (tied to your user_id). should eventually include an edit button so you can change your data.
->>>>>>> 70ff9f1a5adf6383dfb2b9cb114276c883852040
 class ProfileHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -250,7 +226,6 @@ class ProfileHandler(webapp2.RequestHandler):
         if user == None:
             self.redirect("/")
         else:
-<<<<<<< HEAD
             user_template = the_jinja_env.get_template("/templates/pinenter.html")
 
             self.response.write(user_template.render())
@@ -391,44 +366,6 @@ class ProfileHandler(webapp2.RequestHandler):
     #         # "gender": usersGender
     #     }
     #     self.response.write(profile_template.render(template_vars))
-=======
-            user_id = user.user_id()
-
-            if not User.get_by_user(user):
-                self.redirect("/signup")
-
-            else:
-                profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
-
-                #profileComplete.html is the actual profile with all of the data entered
-
-                user_query = User.query(ndb.GenericProperty("user_id")==user_id).fetch()
-                json = user_query
-                print(json)
-
-                weight = json[0].weight
-                height = json[0].height
-                age = json[0].age
-                gender = json[0].gender
-                bmi = json[0].bmi
-                wateramount = json[0].wateramount
-                caloriesgoal = json[0].calories
-
-
-                logout_url = users.create_logout_url("/")
-
-                template_vars = {
-                    # "nickname" : nickname,
-                    "logout_url" : logout_url,
-                    "usersWeight" : weight,
-                    "usersHeight" : height,
-                    "usersAge" : age,
-                    "userBMI" : bmi,
-                    "userwater" : wateramount,
-                    "caloriegoals" : caloriesgoal
-                }
-                self.response.write(profile_template.render(template_vars))
->>>>>>> 70ff9f1a5adf6383dfb2b9cb114276c883852040
 
 app = webapp2.WSGIApplication([
     ("/", MainHandler),
