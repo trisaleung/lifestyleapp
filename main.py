@@ -5,7 +5,7 @@ import jinja2
 import os
 import random
 from fatsecret import Fatsecret
-from lifestyle_model import User, Meal
+from lifestyle_model import User, Meal #api
 from google.appengine.ext import ndb
 
 consumer_key = "2de49a3300b94286944e4cbae4986364"
@@ -18,6 +18,7 @@ the_jinja_env = jinja2.Environment(
     autoescape = True
 )
 
+#the first page; will redirect you to the profile if you are logged in, or send you to the login if you are not
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -27,6 +28,7 @@ class MainHandler(webapp2.RequestHandler):
             login_url = users.create_login_url("/")
             self.redirect(login_url)
 
+#the log page; will take your input (meal) and calculate the calories. you will be able to see the total calories you have had today and your goal, as well as a list of food that you have had.
 class LogHandler(webapp2.RequestHandler):
     def get(self):
         #first authenticates the login
@@ -70,6 +72,8 @@ class LogHandler(webapp2.RequestHandler):
 
                 self.response.write(log_template.render(template_vars))
 
+
+    #shows your input after you submit
     def post(self):
         amountofwater = self.request.get("amountofwater")
         logout_url = users.create_logout_url("/")
@@ -92,6 +96,7 @@ class LogHandler(webapp2.RequestHandler):
 
         self.response.write(log_template.render(template_vars))
 
+#will redirect you to this page if you are a new user. input your data in the get template and then it will show up in the post.
 class SignUpHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -101,6 +106,8 @@ class SignUpHandler(webapp2.RequestHandler):
             self.redirect("/")
         else:
             user_template = the_jinja_env.get_template("/templates/profile.html")
+
+            #profile.html is the page where you enter in your data
 
             logout_url = users.create_logout_url("/")
 
@@ -174,6 +181,7 @@ class SignUpHandler(webapp2.RequestHandler):
         }
         self.response.write(profile_template.render(template_vars))
 
+#your profile. includes all the data you put in earlier (tied to your user_id). should eventually include an edit button so you can change your data.
 class ProfileHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -188,8 +196,9 @@ class ProfileHandler(webapp2.RequestHandler):
 
             else:
                 profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
-                #replace this one you're able to get data from the user thru google
-                # pinentered = int(self.request.get("pinNumber"))
+
+                #profileComplete.html is the actual profile with all of the data entered
+
                 user_query = User.query(ndb.GenericProperty("user_id")==user_id).fetch()
                 json = user_query
                 print(json)
