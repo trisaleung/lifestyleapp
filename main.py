@@ -51,8 +51,7 @@ class LogHandler(webapp2.RequestHandler):
             template_vars = {
 
             "amountofwater" : "",
-            "logout_url" : logout_url
-
+            "logout_url" : logout_url,
             }
             log_template = the_jinja_env.get_template("/templates/log.html")
 
@@ -63,6 +62,7 @@ class LogHandler(webapp2.RequestHandler):
 
         amountofwater = self.request.get("amountofwater")
         logout_url = users.create_logout_url("/")
+
         fs = Fatsecret(consumer_key, consumer_secret)
         print(fs)
         print(self.request.get('foods123'))
@@ -73,14 +73,8 @@ class LogHandler(webapp2.RequestHandler):
         calories = (results[0]['food_description'])
         print(calories)
 
+        calories = self.valid_response(results[0])
 
-
-
-
-
-
-        # calories = Fatsecret.valid_response(results[0])
-        # print(calories)
 
 
 
