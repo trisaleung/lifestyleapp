@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Profile</title>
+  <title>sign up</title>
   <link rel="stylesheet" href="/styles/style.css">
   <link href="https://fonts.googleapis.com/css?family=Assistant&display=swap" rel="stylesheet">
   <script src='scripts/script.js'></script>
 </head>
   <body>
+<<<<<<< HEAD
     <div class="fixed-bg">
     <div id="nav_bar">
       <div id="text_in_nav">
@@ -17,6 +18,12 @@
     </div>
     <div id="nav_profile"></div>
     </div>
+=======
+    <!--sticky bar at the top of the page that has the name of our app, the logout, and links to the log -->
+
+    <div id="nav_bar"><p id="text_in_nav"><a href="/log" class ="navbarlink">my log</a>
+      | <a href= {{logout_url}} class="navbarlink"> log out!</a></p></div>
+>>>>>>> 3acfa43e6a442b754fc35aea71ad8ac43b7eea1a
     <br>
     <br>
     <br>
@@ -27,8 +34,10 @@
 
     <div class="profile">
       <div id="profileHeader">
-        <h1 id="profileTitle">my profile</h1>
+        <h1 id="profileTitle">Sign Up</h1>
       </div>
+
+      <!--form for you to enter data -->
 
       <form class="profileForm" method="post">
           <div id="wide">
@@ -38,9 +47,9 @@
         <input type="text" name="height" placeholder="height" class="formInput"></input>
         <p>age:</p>
         <input type="text" name="age" placeholder="age" class="formInput"></input>
-        <!-- <p>gender:</p> -->
           </div>
       <div id="wide">
+<<<<<<< HEAD
         <!-- <p>enter a 4-digit pin number</p>
         <input type="text" name="pin" placeholder="pin" class="formInput"></input> -->
         <p>gender:</p>
@@ -62,14 +71,44 @@
             <option value=6>gain 1 lb/week</option>
             <option value=7>gain 1.5 lb/week</option>
             <option value=8>gain 2 lb/week</option>
+=======
+        <p>gender</p>
+        <input type="Radio" name="gender1" value="male">male</input>
+          <input type="Radio" name="gender2" value="female">female</input>
+        <br>
+        <br>
+        <p>weight goal:</p>
+        <input type="text" name="weightgoal" placeholder="weight goal" class="formInput"></input>
+        <p>weekly target:</p>
+        <select name = "weeklymenu">
+            <option value=2>lose 2 lb/week</option>
+            <option value=1.5>lose 1.5 lb/week</option>
+            <option value=1>lose 1 lb/week</option>
+            <option value=.5>lose .5 lb/week</option>
+            <option value=.5>gain .5 lb/week</option>
+            <option value=1>gain 1 lb/week</option>
+            <option value=1.5>gain 1.5 lb/week</option>
+            <option value=2>gain 2 lb/week</option>
+>>>>>>> 3acfa43e6a442b754fc35aea71ad8ac43b7eea1a
         </select>
         </div>
       </div>
-        <button type="submit" name="submitProfile">let's go!</button>
       </div>
-      </form>
+      <center> <button type="submit" name="submitProfile">let's go!</button> </center>
+    </form>
+        <br>
+
+<<<<<<< HEAD
+<!--
+=======
+
 
 <!--
+>>>>>>> 856ee55a0616d4c7fa7f0397341417020dee04ae
+=======
+<!
+>>>>>>> f317f6e661b20caa26799b30446f3f32434ba25c
+>>>>>>> 3acfa43e6a442b754fc35aea71ad8ac43b7eea1a
       <div class="link">
         <a href="/log" id = "logbutton"><div id="logbuttontext">go to my log!</div></a>
       </div> -->
