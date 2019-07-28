@@ -5,7 +5,12 @@ import jinja2
 import os
 import random
 from fatsecret import Fatsecret
+<<<<<<< HEAD
 from lifestyle_model import User, Meal
+=======
+from lifestyle_model import User, Meal #api
+from google.appengine.ext import ndb
+>>>>>>> 50a5bcc8a1c268c08eda2a0b666b506d274a97ed
 
 consumer_key = "2de49a3300b94286944e4cbae4986364"
 consumer_secret = "95f02e15797b47d0b6560e15c4c86740"
@@ -33,6 +38,7 @@ class LogHandler(webapp2.RequestHandler):
         if user == None:
             self.redirect("/")
         else:
+<<<<<<< HEAD
             life_key ="2de49a3300b94286944e4cbae4986364"
             fs = Fatsecret(consumer_key, consumer_secret)
             print(fs)
@@ -54,12 +60,40 @@ class LogHandler(webapp2.RequestHandler):
             "logout_url" : logout_url,
             }
             log_template = the_jinja_env.get_template("/templates/log.html")
+=======
+            #checks whether or not the user has an account here before
+            user_id = user.user_id()
+>>>>>>> 50a5bcc8a1c268c08eda2a0b666b506d274a97ed
 
-            self.response.write(log_template.render(template_vars))
+            #if the user does not, they are redirected to create a new account and enter new info
+            if not User.get_by_user(user):
+                self.redirect("/signup")
 
+            else:
+                life_key ="2de49a3300b94286944e4cbae4986364"
+                fs = Fatsecret(consumer_key, consumer_secret)
+                print(fs)
+                log_template = the_jinja_env.get_template("/templates/log.html")
+                print(self.request.get('#foods123'))
+                print(fs.foods_search(self.request.get('#foods123')))
+
+                logout_url = users.create_logout_url("/")
+
+<<<<<<< HEAD
+=======
+                life_key ="2de49a3300b94286944e4cbae4986364"
+                # fs = Fatsecret(consumer_key, consumer_secret)
+                # print(Fatsecret)
+                user = users.get_current_user()
+                logout_url = users.create_logout_url("/")
+                template_vars = {
+                    "amountofwater" : "",
+                    "logout_url" : logout_url
+                }
+
+    #shows your input after you submit
     def post(self):
-
-
+>>>>>>> 50a5bcc8a1c268c08eda2a0b666b506d274a97ed
         amountofwater = self.request.get("amountofwater")
         logout_url = users.create_logout_url("/")
 
@@ -125,6 +159,8 @@ class SignUpHandler(webapp2.RequestHandler):
             self.response.write(user_template.render(template_vars))
 
     def post(self):
+        user = users.get_current_user()
+
         weight = self.request.get("weight")
         height = self.request.get("height")
         age = self.request.get("age")
@@ -157,8 +193,7 @@ class SignUpHandler(webapp2.RequestHandler):
 
 
 
-        new_user = User(user_id=user_id, height=int(height), weight=int(weight), age=int(age), gender=gender, bmi=int(bmi), wateramount=int(wateramount),calories=int(calories), weightgoal=int(weightgoal), weeklytarget=int(weeklygoal))
-
+        new_user = User(user_id=user_id, height=int(height), weight=int(weight), age=int(age), gender=gender)
 
         new_user.put()
 
@@ -168,10 +203,14 @@ class SignUpHandler(webapp2.RequestHandler):
         weight = new_user.weight
         age = new_user.age
         gender = new_user.gender
+<<<<<<< HEAD
 
 
 
 
+=======
+        # bmi = new_user.bmi
+>>>>>>> 50a5bcc8a1c268c08eda2a0b666b506d274a97ed
 
         profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
 
@@ -191,6 +230,7 @@ class SignUpHandler(webapp2.RequestHandler):
         }
         self.response.write(profile_template.render(template_vars))
 
+<<<<<<< HEAD
 # class ProfileHandler(webapp2.RequestHandler):
 #     def get(self):
 #         user_query = User.query(User.pinNumber == pinentered).fetch()
@@ -213,6 +253,9 @@ class SignUpHandler(webapp2.RequestHandler):
 #
 #         self.redirect("/log")
 
+=======
+#your profile. includes all the data you put in earlier (tied to your user_id). should eventually include an edit button so you can change your data.
+>>>>>>> 50a5bcc8a1c268c08eda2a0b666b506d274a97ed
 class ProfileHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -220,6 +263,7 @@ class ProfileHandler(webapp2.RequestHandler):
         if user == None:
             self.redirect("/")
         else:
+<<<<<<< HEAD
             user_template = the_jinja_env.get_template("/templates/pinenter.html")
 
             self.response.write(user_template.render())
@@ -360,6 +404,44 @@ class ProfileHandler(webapp2.RequestHandler):
     #         # "gender": usersGender
     #     }
     #     self.response.write(profile_template.render(template_vars))
+=======
+            user_id = user.user_id()
+
+            if not User.get_by_user(user):
+                self.redirect("/signup")
+
+            else:
+                profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
+
+                #profileComplete.html is the actual profile with all of the data entered
+
+                user_query = User.query(ndb.GenericProperty("user_id")==user_id).fetch()
+                json = user_query
+                print(json)
+
+                weight = json[0].weight
+                height = json[0].height
+                age = json[0].age
+                gender = json[0].gender
+                bmi = json[0].bmi
+                wateramount = json[0].wateramount
+                caloriesgoal = json[0].calories
+
+
+                logout_url = users.create_logout_url("/")
+
+                template_vars = {
+                    # "nickname" : nickname,
+                    "logout_url" : logout_url,
+                    "usersWeight" : weight,
+                    "usersHeight" : height,
+                    "usersAge" : age,
+                    "userBMI" : bmi,
+                    "userwater" : wateramount,
+                    "caloriegoals" : caloriesgoal
+                }
+                self.response.write(profile_template.render(template_vars))
+>>>>>>> 50a5bcc8a1c268c08eda2a0b666b506d274a97ed
 
 app = webapp2.WSGIApplication([
     ("/", MainHandler),
