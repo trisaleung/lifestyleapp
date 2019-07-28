@@ -5,12 +5,12 @@ import jinja2
 import os
 import random
 from fatsecret import Fatsecret
-<<<<<<< HEAD
+
 from lifestyle_model import User, Meal
-=======
+
 from lifestyle_model import User, Meal #api
 from google.appengine.ext import ndb
->>>>>>> 50a5bcc8a1c268c08eda2a0b666b506d274a97ed
+
 
 consumer_key = "2de49a3300b94286944e4cbae4986364"
 consumer_secret = "95f02e15797b47d0b6560e15c4c86740"
@@ -38,7 +38,7 @@ class LogHandler(webapp2.RequestHandler):
         if user == None:
             self.redirect("/")
         else:
-<<<<<<< HEAD
+
             life_key ="2de49a3300b94286944e4cbae4986364"
             fs = Fatsecret(consumer_key, consumer_secret)
             print(fs)
@@ -60,10 +60,10 @@ class LogHandler(webapp2.RequestHandler):
             "logout_url" : logout_url,
             }
             log_template = the_jinja_env.get_template("/templates/log.html")
-=======
+
             #checks whether or not the user has an account here before
             user_id = user.user_id()
->>>>>>> 50a5bcc8a1c268c08eda2a0b666b506d274a97ed
+
 
             #if the user does not, they are redirected to create a new account and enter new info
             if not User.get_by_user(user):
@@ -79,21 +79,19 @@ class LogHandler(webapp2.RequestHandler):
 
                 logout_url = users.create_logout_url("/")
 
-<<<<<<< HEAD
-=======
-                life_key ="2de49a3300b94286944e4cbae4986364"
+        life_key ="2de49a3300b94286944e4cbae4986364"
                 # fs = Fatsecret(consumer_key, consumer_secret)
                 # print(Fatsecret)
                 user = users.get_current_user()
                 logout_url = users.create_logout_url("/")
                 template_vars = {
-                    "amountofwater" : "",
-                    "logout_url" : logout_url
+                "amountofwater" : "",
+                "logout_url" : logout_url
                 }
 
     #shows your input after you submit
     def post(self):
->>>>>>> 50a5bcc8a1c268c08eda2a0b666b506d274a97ed
+
         amountofwater = self.request.get("amountofwater")
         logout_url = users.create_logout_url("/")
 
@@ -107,7 +105,7 @@ class LogHandler(webapp2.RequestHandler):
         calories = (results[0]['food_description'])
         print(calories)
 
-        calories = self.valid_response(results[0])
+        calories = Fatsecret.valid_response(results[0])
 
 
 
@@ -203,25 +201,22 @@ class SignUpHandler(webapp2.RequestHandler):
         weight = new_user.weight
         age = new_user.age
         gender = new_user.gender
-<<<<<<< HEAD
 
 
 
 
-=======
-        # bmi = new_user.bmi
->>>>>>> 50a5bcc8a1c268c08eda2a0b666b506d274a97ed
+
+
 
         profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
 
         user = users.get_current_user()
-        # nickname = user.nickname()
-        # print nickname
+
 
         logout_url = users.create_logout_url("/")
 
         template_vars = {
-            # "nickname" : nickname,
+
             "logout_url" : logout_url,
             "usersWeight" : weight,
             "usersHeight" : height,
@@ -230,32 +225,10 @@ class SignUpHandler(webapp2.RequestHandler):
         }
         self.response.write(profile_template.render(template_vars))
 
-<<<<<<< HEAD
-# class ProfileHandler(webapp2.RequestHandler):
-#     def get(self):
-#         user_query = User.query(User.pinNumber == pinentered).fetch()
-#
-#
-#
-#
-#
-#
-#         user = users.get_current_user()
-#
-#         user_template = the_jinja_env.get_template("/templates/pinenter.html")
-#
-#         self.response.write(user_template.render())
-#
-#     def post(self):
-#         pinentered = int(self.request.get("pinNumber"))
-#
-#         user_query = User.query(User.pinNumber == pinentered).fetch()
-#
-#         self.redirect("/log")
 
-=======
+
 #your profile. includes all the data you put in earlier (tied to your user_id). should eventually include an edit button so you can change your data.
->>>>>>> 50a5bcc8a1c268c08eda2a0b666b506d274a97ed
+
 class ProfileHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -263,7 +236,7 @@ class ProfileHandler(webapp2.RequestHandler):
         if user == None:
             self.redirect("/")
         else:
-<<<<<<< HEAD
+
             user_template = the_jinja_env.get_template("/templates/pinenter.html")
 
             self.response.write(user_template.render())
@@ -441,7 +414,6 @@ class ProfileHandler(webapp2.RequestHandler):
                     "caloriegoals" : caloriesgoal
                 }
                 self.response.write(profile_template.render(template_vars))
->>>>>>> 50a5bcc8a1c268c08eda2a0b666b506d274a97ed
 
 app = webapp2.WSGIApplication([
     ("/", MainHandler),
