@@ -82,12 +82,13 @@ class LogHandler(webapp2.RequestHandler):
         life_key ="2de49a3300b94286944e4cbae4986364"
                 # fs = Fatsecret(consumer_key, consumer_secret)
                 # print(Fatsecret)
-                user = users.get_current_user()
-                logout_url = users.create_logout_url("/")
-                template_vars = {
-                "amountofwater" : "",
-                "logout_url" : logout_url
-                }
+        user = users.get_current_user()
+        logout_url = users.create_logout_url("/")
+        # template_vars = {
+        #         "amountofwater" : "",
+        #         "logout_url" : logout_url,
+        #         "calories" : calories
+        #         }
 
     #shows your input after you submit
     def post(self):
@@ -99,45 +100,29 @@ class LogHandler(webapp2.RequestHandler):
         print(fs)
         print(self.request.get('foods123'))
 
-        results = (fs.foods_search(self.request.get('foods123')))
-        print(results[0])
+        # results = (fs.foods_search(self.request.get('foods123')))
+        # print(results[0])
 
-        calories = (results[0]['food_description'])
+        calories = json.loads(results)
         print(calories)
 
-        calories = Fatsecret.valid_response(results[0])
+        calories = (results[0]['food_description'])
+        print(calories["food_description"])
 
 
-
-
-
-
-
-
-
-
-
-
-
-        # print(fs.foods_search(self.request.get('foods123')))
-        #
-        # user_query = User.query(ndb.GenericProperty("user_id")==user_id).fetch()
-        # json = user_query
-        #
-        # caloriesgoal = json[0].calories
 
 
         template_vars = {
             "amountofwater" : amountofwater,
             "logout_url" : logout_url,
             "calories" : calories
-
-
-
         }
         log_template = the_jinja_env.get_template("/templates/log.html")
 
         self.response.write(log_template.render(template_vars))
+
+
+
 
 class SignUpHandler(webapp2.RequestHandler):
     def get(self):
@@ -261,60 +246,29 @@ class ProfileHandler(webapp2.RequestHandler):
             # "gender": usersGender
         }
         self.response.write(profile_template.render(template_vars))
-        #
-        #
-        #
-        # if user == None:
-        #     self.redirect("/")
-        # else:
-        #     # if user.height == None and user.weight == None:
-        #     profile_template = the_jinja_env.get_template("/templates/profile.html")
-        #
-        #     user = users.get_current_user()
-        #     # nickname = user.nickname()
-        #     # print nickname
-        #
-        #     logout_url = users.create_logout_url("/")
-        #
-        #     template_vars = {
-        #         # "nickname" : nickname,
-        #         "logout_url" : logout_url,
-        #     }
-        #     self.response.write(profile_template.render(template_vars))
+
+            #     user_id = user.user_id()
+            #
+            # if not User.get_by_user(user):
+            #     self.redirect("/signup")
+            #
             # else:
-                # weight = self.request.get("weight")
-                # height = self.request.get("height")
-                # age = self.request.get("age")
-                # gender = self.request.get("gender")
-                # pin = self.request.get("pin")
+            #     profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
+
+                #profileComplete.html is the actual profile with all of the data entered
+
+                # user_query = User.query(ndb.GenericProperty("user_id")==user_id).fetch()
+                # json = user_query
+                # print(json)
                 #
-                # bmi = 16
-                # # bmi = ( weight / (height * height)) * 703
-                # wateramount = 8
+                # weight = json[0].weight
+                # height = json[0].height
+                # age = json[0].age
+                # gender = json[0].gender
+                # bmi = json[0].bmi
+                # wateramount = json[0].wateramount
+                # caloriesgoal = json[0].calories
                 #
-                # calories = 0
-                #
-                # if gender == "male":
-                #     calories = 2000
-                # elif gender == "female":
-                #     calories = 2000
-                #
-                # new_user = User(height=int(height), weight=int(weight), age=int(age), gender=gender, bmi=int(bmi), wateramount=int(wateramount),calories=int(calories), pinNumber=int(pin))
-                #
-                # new_user.put()
-                #
-                # user_query = User.query().fetch()
-                #
-                # height = new_user.height
-                # weight = new_user.weight
-                # age = new_user.age
-                # gender = new_user.gender
-                #
-                # profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
-                #
-                # user = users.get_current_user()
-                # # nickname = user.nickname()
-                # # print nickname
                 #
                 # logout_url = users.create_logout_url("/")
                 #
@@ -324,93 +278,11 @@ class ProfileHandler(webapp2.RequestHandler):
                 #     "usersWeight" : weight,
                 #     "usersHeight" : height,
                 #     "usersAge" : age,
-                #     # "gender": usersGender
+                #     "userBMI" : bmi,
+                #     "userwater" : wateramount,
+                #     "caloriegoals" : caloriesgoal
                 # }
                 # self.response.write(profile_template.render(template_vars))
-
-    # def post(self):
-    #     weight = self.request.get("weight")
-    #     height = self.request.get("height")
-    #     age = self.request.get("age")
-    #     gender = self.request.get("gender")
-    #     pin = self.request.get("pin")
-    #
-    #     bmi = 16
-    #     # bmi = ( weight / (height * height)) * 703
-    #     wateramount = 8
-    #
-    #     calories = 0
-    #
-    #     if gender == "male":
-    #         calories = 2000
-    #     elif gender == "female":
-    #         calories = 2000
-    #
-    #     new_user = User(height=int(height), weight=int(weight), age=int(age), gender=gender, bmi=int(bmi), wateramount=int(wateramount),calories=int(calories), pinNumber=int(pin))
-    #
-    #     new_user.put()
-    #
-    #     user_query = User.query().fetch()
-    #
-    #     height = new_user.height
-    #     weight = new_user.weight
-    #     age = new_user.age
-    #     gender = new_user.gender
-    #
-    #     profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
-    #
-    #     user = users.get_current_user()
-    #     # nickname = user.nickname()
-    #     # print nickname
-    #
-    #     logout_url = users.create_logout_url("/")
-    #
-    #     template_vars = {
-    #         # "nickname" : nickname,
-    #         "logout_url" : logout_url,
-    #         "usersWeight" : weight,
-    #         "usersHeight" : height,
-    #         "usersAge" : age,
-    #         # "gender": usersGender
-    #     }
-    #     self.response.write(profile_template.render(template_vars))
-=======
-            user_id = user.user_id()
-
-            if not User.get_by_user(user):
-                self.redirect("/signup")
-
-            else:
-                profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
-
-                #profileComplete.html is the actual profile with all of the data entered
-
-                user_query = User.query(ndb.GenericProperty("user_id")==user_id).fetch()
-                json = user_query
-                print(json)
-
-                weight = json[0].weight
-                height = json[0].height
-                age = json[0].age
-                gender = json[0].gender
-                bmi = json[0].bmi
-                wateramount = json[0].wateramount
-                caloriesgoal = json[0].calories
-
-
-                logout_url = users.create_logout_url("/")
-
-                template_vars = {
-                    # "nickname" : nickname,
-                    "logout_url" : logout_url,
-                    "usersWeight" : weight,
-                    "usersHeight" : height,
-                    "usersAge" : age,
-                    "userBMI" : bmi,
-                    "userwater" : wateramount,
-                    "caloriegoals" : caloriesgoal
-                }
-                self.response.write(profile_template.render(template_vars))
 
 app = webapp2.WSGIApplication([
     ("/", MainHandler),
