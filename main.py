@@ -166,32 +166,30 @@ class SignUpHandler(webapp2.RequestHandler):
         gender2 = self.request.get("gender2")
         weightgoal = self.request.get("weightgoal")
         weeklygoal = self.request.get("weeklymenu")
+        calories = 0
+
+        weightconverted = float(weight) * 0.453592
+        heightconverted = float(height) * 2.54
 
         gender = ""
 
-        if gender2 == None:
-            gender = gender1
-        elif gender1 == None:
-            gender = gender2
-
-        # weightgoal = self.request.get("weightgoal")
-        # weeklytarget = self.request.get()
         user_id = user.user_id()
 
-        bmi = 16
-        # bmi = ( weight / (height * height)) * 703
+        bmi = (float(weight) / (float(height) * float(height))) * 703
+
+        if gender1 == "male":
+            gender = gender1
+            calories = (10 * weightconverted) + (6.25 * heightconverted) - (5 * int(age)) + 5
+
+        elif gender2 == "female":
+            gender = gender2
+            calories = (10 * weightconverted)+ (6.25 * heightconverted) - (5 * int(age)) - 161
+
+
         wateramount = 8
 
-        calories = 0
 
-        # if gender == "male":
-        #     calories = 2000
-        # elif gender == "female":
-        #     calories = 2000
-
-
-
-        new_user = User(user_id=user_id, height=int(height), weight=int(weight), age=int(age), gender=gender)
+        new_user = User(user_id=user_id, height=int(height), weight=int(weight), age=int(age), gender=gender, bmi=float(bmi), wateramount=int(wateramount), calories=int(calories), weightgoal=int(weightgoal), weeklytarget=int(weeklygoal))
 
         new_user.put()
 
@@ -201,12 +199,18 @@ class SignUpHandler(webapp2.RequestHandler):
         weight = new_user.weight
         age = new_user.age
         gender = new_user.gender
+<<<<<<< HEAD
 
 
 
 
 
 
+=======
+        bmi = new_user.bmi
+        cupsofwater = new_user.wateramount
+        goals = new_user.calories
+>>>>>>> 35737e48027eef8c239c2c7a0b62eb45aeedc17a
 
         profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
 
@@ -221,7 +225,9 @@ class SignUpHandler(webapp2.RequestHandler):
             "usersWeight" : weight,
             "usersHeight" : height,
             "usersAge" : age,
-            # "gender": usersGender
+            "userBMI" : bmi,
+            "userwater" : cupsofwater,
+            "caloriegoals" : goals,
         }
         self.response.write(profile_template.render(template_vars))
 

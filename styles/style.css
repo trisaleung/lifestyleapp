@@ -7,7 +7,30 @@ body {
   margin-top: inherit;
   font-style: italic;
   background-color: #F2EDE4;
+  background-image: url("https://wallpapermemory.com/desktop-backgrounds/food-drink/drink/smoothie");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
   /* change later */
+}
+.fixed-bg {
+  /* The background image */
+  background-image: url("https://wallpapermemory.com/desktop-backgrounds/food-drink/drink/smoothie");
+
+  /* Set a specified height, or the minimum height for the background image */
+  min-height: 500px;
+
+  /* Set background image to fixed (don't scroll along with the page) */
+  background-attachment: fixed;
+
+  /* Center the background image */
+  background-position: center;
+
+  /* Set the background image to no repeat */
+  background-repeat: no-repeat;
+
+  /* Scale the background image to be as large as possible */
+  background-size: cover;
 }
 
 h1 {
@@ -70,7 +93,7 @@ input[name="submitbutton"]:hover {
   height: 5px;
   margin-top: -20px;
   margin-left: -8px;
-  position: fixed;
+  position: relative;
   width: 100%;
   z-index: 3;
   text-align: right;
@@ -169,6 +192,20 @@ input[name="submitbutton"]:hover {
   margin-top: -5%;
 }
 
+#profileName {
+  color: #DD9F8E;
+  font-family: 'Fascinate', cursive;
+  font-size: 40px;
+  float: left;
+  padding: 10px;
+  vertical-align: text-top;
+  /* height: 100%; */
+}
+
+#nav_profile {
+  position: absolute;
+}
+
 .profile {
   background-color: #DD9F8E;
   border-color: #859B7E;
@@ -176,15 +213,15 @@ input[name="submitbutton"]:hover {
   border-width: 10px;
   margin-left: 30%;
   margin-right: 30%;
-  margin-top: 1%;
+  margin-top: 0%;
 }
 
-.name {
+/* .name {
   color: #DD9F8E;
   font-family: 'Fascinate', cursive;
   font-size: 80px;
   height: 100%;
-}
+} */
 
 .navbarlink {
   color: #F2EDE4;
