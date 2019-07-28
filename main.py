@@ -199,18 +199,9 @@ class SignUpHandler(webapp2.RequestHandler):
         weight = new_user.weight
         age = new_user.age
         gender = new_user.gender
-<<<<<<< HEAD
-
-
-
-
-
-
-=======
         bmi = new_user.bmi
         cupsofwater = new_user.wateramount
         goals = new_user.calories
->>>>>>> 35737e48027eef8c239c2c7a0b62eb45aeedc17a
 
         profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
 
