@@ -146,8 +146,11 @@ class SignUpHandler(webapp2.RequestHandler):
         gender1 = self.request.get("gender1")
         gender2 = self.request.get("gender2")
         weightgoal = self.request.get("weightgoal")
-        weeklygoal = self.request.get("weeklymenu")
+        # weeklygoal = self.request.get("weeklymenu")
         calories = 0
+
+        activitylevel = self.request.get("activitymenu")
+        weeklytarget = self.request.get("weeklytargetmenu")
 
         weightconverted = float(weight) * 0.453592
         heightconverted = float(height) * 2.54
@@ -166,12 +169,38 @@ class SignUpHandler(webapp2.RequestHandler):
             gender = gender2
             calories = (10 * weightconverted)+ (6.25 * heightconverted) - (5 * int(age)) - 161
 
+        if activitylevel == "a":
+            calories = calories * 1.2
+        elif activitylevel == "b":
+            calories = calories * 1.37
+        elif activitylevel == "c":
+            calories = calories * 1.55
+        elif activitylevel == "d":
+            calories = calories * 1.725
+
+        if weeklytarget == 1:
+            calories = calories - 1000
+        elif weeklytarget == 2:
+            calories = calories - 750
+        elif weeklytarget == 3:
+            calories = calories - 500
+        elif weeklytarget == 4:
+            calories = calories - 250
+        elif weeklytarget == 5:
+            calories = calories + 250
+        elif weeklytarget == 6:
+            calories = calories + 500
+        elif weeklytarget == 7:
+            calories = calories + 750
+        elif weeklytarget == 8:
+            calories = calories + 1000
+
         #if activity level low: change calories
         #use constants, multiply it by the calories variable
 
         wateramount = 8
 
-        new_user = User(user_id=user_id, height=int(height), weight=int(weight), age=int(age), gender=gender, bmi=float(bmi), wateramount=int(wateramount), calories=int(calories), weightgoal=int(weightgoal), weeklytarget=int(weeklygoal))
+        new_user = User(user_id=user_id, height=int(height), weight=int(weight), age=int(age), gender=gender, bmi=float(bmi), wateramount=wateramount, calories=int(calories), weightgoal=int(weightgoal))
 
         new_user.put()
 

@@ -10,7 +10,7 @@ class User(ndb.Model):
     wateramount = ndb.IntegerProperty(required=True)
     calories = ndb.IntegerProperty(required=True)
     weightgoal = ndb.IntegerProperty(required=True)
-    weeklytarget = ndb.IntegerProperty(required=True)
+    # weeklytarget = ndb.IntegerProperty(required=True)
 
     #functions inside of object; cls represents class
     @classmethod
