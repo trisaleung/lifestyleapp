@@ -6,11 +6,11 @@ class User(ndb.Model):
     weight = ndb.IntegerProperty(required=True)
     age = ndb.IntegerProperty(required=True)
     gender = ndb.StringProperty(required=True)
-    # bmi = ndb.IntegerProperty(required=True)
-    # wateramount = ndb.IntegerProperty(required=True)
-    # calories = ndb.IntegerProperty(required=True)
-    # weightgoal = ndb.IntegerProperty(required=True)
-    # weeklytarget = ndb.IntegerProperty(required=True)
+    bmi = ndb.FloatProperty(required=True)
+    wateramount = ndb.IntegerProperty(required=True)
+    calories = ndb.IntegerProperty(required=True)
+    weightgoal = ndb.IntegerProperty(required=True)
+    weeklytarget = ndb.IntegerProperty(required=True)
 
     #functions inside of object; cls represents class
     @classmethod
