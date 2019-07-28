@@ -216,6 +216,10 @@ input[name="submitbutton"]:hover {
   margin-top: 0%;
 }
 
+#profileTitle {
+  font-family: 'Fascinate', cursive;
+}
+
 /* .name {
   color: #DD9F8E;
   font-family: 'Fascinate', cursive;
