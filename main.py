@@ -166,9 +166,10 @@ class SignUpHandler(webapp2.RequestHandler):
             gender = gender2
             calories = (10 * weightconverted)+ (6.25 * heightconverted) - (5 * int(age)) - 161
 
+        #if activity level low: change calories
+        #use constants, multiply it by the calories variable
 
         wateramount = 8
-
 
         new_user = User(user_id=user_id, height=int(height), weight=int(weight), age=int(age), gender=gender, bmi=float(bmi), wateramount=int(wateramount), calories=int(calories), weightgoal=int(weightgoal), weeklytarget=int(weeklygoal))
 
