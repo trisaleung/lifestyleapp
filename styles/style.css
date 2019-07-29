@@ -124,7 +124,7 @@ input[name="submitbutton"]:hover {
 }
 
 #text_in_nav {
-  margin-right: 60px;
+  margin-right: 20px;
   margin-top: -1px;
   z-index: 3;
   font-style: normal;
@@ -200,6 +200,8 @@ input[name="submitbutton"]:hover {
   font-size: 40px;
   float: left;
   padding: 10px;
+  margin-top: -2%;
+  margin-left: 48%;
   vertical-align: text-top;
   /* height: 100%; */
 }
