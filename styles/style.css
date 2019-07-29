@@ -183,6 +183,12 @@ input[name="submitbutton"]:hover {
   margin-bottom: 5%;
 }
 
+#profiletext {
+  padding-left: 40px;
+  padding-bottom: 20px;
+  font-style: normal;
+}
+
 .profileForm {
   margin-left: 20%;
   margin-top: -80px;
