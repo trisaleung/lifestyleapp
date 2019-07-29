@@ -248,71 +248,42 @@ class ProfileHandler(webapp2.RequestHandler):
         if user == None:
             self.redirect("/")
         else:
+            user_id = user.user_id()
 
-            user_template = the_jinja_env.get_template("/templates/pinenter.html")
+            if not User.get_by_user(user):
+                self.redirect("/signup")
 
-            self.response.write(user_template.render())
-
-    def post(self):
-        profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
-
-        pinentered = int(self.request.get("pinNumber"))
-        user_query = User.query(User.pinNumber == pinentered).fetch()
-
-        json = user_query
-
-        weight = json[0].weight
-        height = json[0].height
-        age = json[0].age
-
-        logout_url = users.create_logout_url("/")
-
-        template_vars = {
-            # "nickname" : nickname,
-            "logout_url" : logout_url,
-            "usersWeight" : weight,
-            "usersHeight" : height,
-            "usersAge" : age,
-            # "gender": usersGender
-        }
-        self.response.write(profile_template.render(template_vars))
-
-            #     user_id = user.user_id()
-            #
-            # if not User.get_by_user(user):
-            #     self.redirect("/signup")
-            #
-            # else:
-            #     profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
+            else:
+                profile_template = the_jinja_env.get_template("/templates/profileComplete.html")
 
                 #profileComplete.html is the actual profile with all of the data entered
 
-                # user_query = User.query(ndb.GenericProperty("user_id")==user_id).fetch()
-                # json = user_query
-                # print(json)
-                #
-                # weight = json[0].weight
-                # height = json[0].height
-                # age = json[0].age
-                # gender = json[0].gender
-                # bmi = json[0].bmi
-                # wateramount = json[0].wateramount
-                # caloriesgoal = json[0].calories
-                #
-                #
-                # logout_url = users.create_logout_url("/")
-                #
-                # template_vars = {
-                #     # "nickname" : nickname,
-                #     "logout_url" : logout_url,
-                #     "usersWeight" : weight,
-                #     "usersHeight" : height,
-                #     "usersAge" : age,
-                #     "userBMI" : bmi,
-                #     "userwater" : wateramount,
-                #     "caloriegoals" : caloriesgoal
-                # }
-                # self.response.write(profile_template.render(template_vars))
+                user_query = User.query(ndb.GenericProperty("user_id")==user_id).fetch()
+                json = user_query
+                print(json)
+
+                weight = json[0].weight
+                height = json[0].height
+                age = json[0].age
+                gender = json[0].gender
+                bmi = json[0].bmi
+                wateramount = json[0].wateramount
+                caloriesgoal = json[0].calories
+
+
+                logout_url = users.create_logout_url("/")
+
+                template_vars = {
+                    # "nickname" : nickname,
+                    "logout_url" : logout_url,
+                    "usersWeight" : weight,
+                    "usersHeight" : height,
+                    "usersAge" : age,
+                    "userBMI" : bmi,
+                    "userwater" : wateramount,
+                    "caloriegoals" : caloriesgoal
+                }
+                self.response.write(profile_template.render(template_vars))
 
 app = webapp2.WSGIApplication([
     ("/", MainHandler),
