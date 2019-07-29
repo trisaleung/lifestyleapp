@@ -11,28 +11,17 @@ body {
   background-attachment: scroll;
   background-size: cover;
   background-image: url('https://wallpapermemory.com/uploads/816/smoothie-background-hd-1152x768-234784.jpg');
-  background-position: center
+  background-position: center;
 }
   /* change later */
 }
 .fixed-bg {
-  /* The background image */
   background-image: url("https://wallpapermemory.com/desktop-backgrounds/food-drink/drink/smoothie");
-
-  /* Set a specified height, or the minimum height for the background image */
-  min-height: 500px;
-
-  /* Set background image to fixed (don't scroll along with the page) */
   background-attachment: fixed;
-
-  /* Center the background image */
   background-position: center;
-
-  /* Set the background image to no repeat */
   background-repeat: no-repeat;
-
-  /* Scale the background image to be as large as possible */
   background-size: cover;
+  filter: blur(20px);
 }
 
 h1 {
