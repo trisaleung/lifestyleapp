@@ -9,19 +9,24 @@
   <body>
 
     <!--sticky bar at the top of the page that has the name of our app, the logout, and links to the log -->
-    <div id="nav_bar"><p id="text_in_nav"><a href="/log" class ="navbarlink">my log</a>
-      | <a href= {{logout_url}} class="navbarlink"> log out!</a></p></div>
+    <div id="nav_bar">
+      <div id="text_in_nav">
+        <h1 id="profileName">CalPal</h1>
+        <a href="/log" class ="navbarlink">my log</a>
+      | <a href= {{logout_url}} class="navbarlink"> log out!</a></div></div>
+    <!-- <div id="text_in_nav">
+      <h1 id="profileName">CalPal</h1> -->
     <br>
     <br>
     <br>
     <!--box that displays your data-->
-    <div class="name">
+    <!-- <div class="name">
       <h1>CalPal</h1>
-    </div>
+    </div> -->
 
     <div class="profile">
       <div id="profileHeader">
-        <h1 id="profileTitle">my profile</h1>
+        <h1 id="profileTitle">My Profile</h1>
       </div>
       <div id="profiletext">
         <p>weight: {{usersWeight}}</p>
@@ -35,7 +40,7 @@
         <a href="/log" id = "logbutton"><div id="logbuttontext">go to my log!</div></a>
       </div>
 
-      <p id = "goal">your goal for today {{caloriegoals}} calories and {{userwater}} cups of water.</p>
+      <p id = "goal">your goal for today is {{caloriegoals}} calories and {{userwater}} cups of water!</p>
     </div>
 
   </body>

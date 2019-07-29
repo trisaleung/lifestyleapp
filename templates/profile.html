@@ -7,10 +7,9 @@
   <script src='scripts/script.js'></script>
 </head>
   <body>
-    <div class="fixed-bg">
     <div id="nav_bar">
       <div id="text_in_nav">
-        <h1 id="profileName">CalPal</h1>
+        <center><h1 id="profileName">CalPal</h1></center>
         <a href="/log" class ="navbarlink">my log</a>
       | <a href= {{logout_url}} class="navbarlink"> log out!</a>
     </div>
@@ -72,13 +71,25 @@
             <option value="c">active</option>
             <option value="d">very active</option>
         </select>
+    </div>
+    </div>
+    <center> <button type="submit" name="submitProfile">let's go!</button> </center>
 
-        </div>
       </div>
-      </div>
-      <center> <button type="submit" name="submitProfile">let's go!</button> </center>
+      <!-- <center> <button type="submit" name="submitProfile">let's go!</button> </center> -->
     </form>
-        <br>
+
+<!--
+=======
+<!
+>>>>>>> 3acfa43e6a442b754fc35aea71ad8ac43b7eea1a
+      <div class="link">
+        <a href="/log" id = "logbutton"><div id="logbuttontext">go to my log!</div></a>
+      </div> -->
+<!--
+      <p id = "goal">your goal for today is...</p>
+      <p id = "goal"> __ amount of calories!</p>
+      <p id = "goal"> __ cups of water!</p> -->
     </div>
   </body>
   </html>

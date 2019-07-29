@@ -7,9 +7,11 @@ body {
   margin-top: inherit;
   font-style: italic;
   background-color: #F2EDE4;
-  background-image: url("https://wallpapermemory.com/desktop-backgrounds/food-drink/drink/smoothie");
   background-repeat: no-repeat;
   background-attachment: scroll;
+  background-size: cover;
+  background-image: url('https://wallpapermemory.com/uploads/816/smoothie-background-hd-1152x768-234784.jpg');
+  background-position: center
 }
   /* change later */
 }
@@ -94,7 +96,7 @@ input[name="submitbutton"]:hover {
   margin-top: -20px;
   margin-left: -8px;
   position: relative;
-  width: 100%;
+  width: 95.75%;
   z-index: 3;
   text-align: right;
   font-family: 'Assistant';
@@ -111,7 +113,7 @@ input[name="submitbutton"]:hover {
   height: 5px;
   margin-top: 2.2%;
   margin-left: -8px;
-  /* margin-right: 6px; */
+  margin-right: 6px;
   position: fixed;
   width: 100%;
   z-index: 3;
@@ -122,9 +124,9 @@ input[name="submitbutton"]:hover {
 }
 
 #text_in_nav {
-  margin-right: 80px;
+  margin-right: 20px;
   margin-top: -1px;
-  z-index: 4;
+  z-index: 3;
   font-style: normal;
 }
 
@@ -198,6 +200,8 @@ input[name="submitbutton"]:hover {
   font-size: 40px;
   float: left;
   padding: 10px;
+  margin-top: -2%;
+  margin-left: 48%;
   vertical-align: text-top;
   /* height: 100%; */
 }
