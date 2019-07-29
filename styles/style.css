@@ -12,16 +12,19 @@ body {
   background-size: cover;
   background-image: url('https://wallpapermemory.com/uploads/816/smoothie-background-hd-1152x768-234784.jpg');
   background-position: center;
+
 }
   /* change later */
 }
 .fixed-bg {
-  background-image: url("https://wallpapermemory.com/desktop-backgrounds/food-drink/drink/smoothie");
+  background-image: url('https://wallpapermemory.com/uploads/816/smoothie-background-hd-1152x768-234784.jpg');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   filter: blur(20px);
+  -webkit-filter: blur(20px);
+  z-index: 5
 }
 
 h1 {

@@ -55,9 +55,8 @@ class LogHandler(webapp2.RequestHandler):
             user = users.get_current_user()
             logout_url = users.create_logout_url("/")
             template_vars = {
-
-            "amountofwater" : "",
-            "logout_url" : logout_url,
+                "amountofwater" : "",
+                "logout_url" : logout_url,
             }
             log_template = the_jinja_env.get_template("/templates/log.html")
 
@@ -84,12 +83,16 @@ class LogHandler(webapp2.RequestHandler):
                 # print(Fatsecret)
         user = users.get_current_user()
         logout_url = users.create_logout_url("/")
-        # template_vars = {
-        #         "amountofwater" : "",
-        #         "logout_url" : logout_url,
-        #         "calories" : calories
-        #         }
+        template_vars = {
+                "amountofwater" : "",
+                "logout_url" : logout_url,
+                "calories" : 123,
+                "foods123": self.request.get('foods123'),
 
+                }
+        log_template = the_jinja_env.get_template("/templates/log.html")
+
+        self.response.write(log_template.render(template_vars))
     #shows your input after you submit
     def post(self):
 
@@ -97,25 +100,30 @@ class LogHandler(webapp2.RequestHandler):
         logout_url = users.create_logout_url("/")
 
         fs = Fatsecret(consumer_key, consumer_secret)
-        print(fs)
-        print(self.request.get('foods123'))
+        #print(fs)
 
-        # results = (fs.foods_search(self.request.get('foods123')))
-        # print(results[0])
+        # print("")
 
-        calories = json.loads(results)
-        print(calories)
 
-        calories = (results[0]['food_description'])
-        print(calories["food_description"])
+        results = fs.foods_search(self.request.get('foods123'))
 
+        print(results['food'][0])
+
+
+        # print(results['food'][0]['food_description'])
+
+        results = results['food'][0]['food_description']
+
+        # calories = (results[0]['food_description'])
+        # print(calories["food_description"])
+        #
 
 
 
         template_vars = {
             "amountofwater" : amountofwater,
             "logout_url" : logout_url,
-            "calories" : calories
+            "foods123" : results
         }
         log_template = the_jinja_env.get_template("/templates/log.html")
 
@@ -290,4 +298,4 @@ app = webapp2.WSGIApplication([
     ("/log", LogHandler),
     ("/profile", ProfileHandler),
     ("/signup", SignUpHandler)
-])
+],debug=True)

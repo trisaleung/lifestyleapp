@@ -5,8 +5,15 @@
   <link href="https://fonts.googleapis.com/css?family=Assistant&display=swap" rel="stylesheet">
   <script src = "scripts/script.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <style>
+    #test {
+      background-image: url("https://www.freepik.com/free-photos-vectors/healthy-food");
+    }
+  </style>
+
+
 </head>
-<body>
+<body id="test">
   <!--sticky bar at the top of the page that has the name of our app, the logout, and links to the log -->
   <div id="nav_bar_log"><p id="text_in_nav"><a href="/profile" class ="navbarlink">profile</a>
     | <a href= {{logout_url}} class="navbarlink"> log out!</a></p></div>
@@ -52,7 +59,6 @@
 
       <center> <p> {{foods123}} </p> </center>
 
-      <center>    <p>You've had {{calories}} today!</p> </center>
         </form>
       </div>
     </div>
@@ -63,7 +69,6 @@
         <form method = "post" action="/log">
           <input name="foods123" type="text" placeholder="Search.."/>
           <input type="submit" name="submitbutton" value="enter"/>
-        </center>  <p>You've had {{amountofwater}} cups of water today!</p> </center>
         </form>
       </div>
 
@@ -72,7 +77,6 @@
         <form method = "post" action="/log">
           <input name="foods123" type="text" placeholder="Search.."/>
           <input type="submit" name="submitbutton" value="enter"/>
-    <center>      <p>You've had {{amountofwater}} cups of water today!</p> </center>
         </form>
       </div>
 
@@ -80,9 +84,8 @@
     <div class = "menu" id = "snacks">
       <h2 id="options">snacks</h2>
         <form method = "post" action="/log">
-          <input name="foods123" type="text" placeholder="Search.."/>
+          <input name="foods1236" type="text" placeholder="Search.."/>
           <input type="submit" name="submitbutton" value="enter"/>
-      <center>    <p>You've had {{amountofwater}} cups of water today!</p> </center>
         </form>
       </div>
 
